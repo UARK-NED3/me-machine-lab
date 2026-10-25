@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">HydroGrab arm mechanism</title>
+  <desc id="desc">Simplified diagram showing master syringes, water-filled tubing, slave syringes, a two-link arm, and gripper.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#176b87"/></marker>
+    <style>text{font-family:Arial,sans-serif;fill:#17324d}.label{font-size:20px;font-weight:700}.small{font-size:16px}.line{stroke:#17324d;stroke-width:8;stroke-linecap:round}.thin{stroke:#17324d;stroke-width:3}.water{stroke:#25a8d9;stroke-width:8;fill:none;stroke-linecap:round}.arm{fill:#f2b134;stroke:#17324d;stroke-width:4}.syringe{fill:#fff;stroke:#17324d;stroke-width:3}.pivot{fill:#e85d3f;stroke:#17324d;stroke-width:3}</style>
+  </defs>
+  <rect width="960" height="520" fill="#f7fbfd"/>
+  <text x="40" y="45" class="label">HydroGrab — water-powered linkage arm</text>
+  <rect x="50" y="395" width="430" height="35" rx="5" fill="#94b49f" stroke="#17324d" stroke-width="3"/>
+  <rect x="390" y="250" width="48" height="148" rx="5" fill="#c8d8e4" stroke="#17324d" stroke-width="3"/>
+  <circle cx="415" cy="286" r="12" class="pivot"/>
+  <path d="M415 286 L590 195 L700 295" class="line" fill="none"/>
+  <circle cx="590" cy="195" r="12" class="pivot"/>
+  <path d="M700 295 L750 270 M700 295 L750 320" class="line" fill="none"/>
+  <path d="M750 270 L773 286 M750 320 L773 302" class="thin" fill="none"/>
+  <text x="545" y="160" class="small">elbow pivot</text>
+  <text x="350" y="235" class="small">shoulder pivot</text>
+  <rect x="446" y="305" width="92" height="20" rx="5" class="syringe" transform="rotate(-28 446 305)"/>
+  <line x1="445" y1="308" x2="405" y2="330" class="thin"/>
+  <line x1="539" y1="260" x2="570" y2="244" class="thin"/>
+  <text x="470" y="380" class="small">shoulder slave</text>
+  <rect x="600" y="190" width="82" height="19" rx="5" class="syringe" transform="rotate(43 600 190)"/>
+  <text x="680" y="190" class="small">elbow slave</text>
+  <path d="M420 340 C350 360 310 345 255 330 C215 320 205 260 165 250" class="water"/>
+  <path d="M650 240 C565 320 475 350 370 355 C325 355 310 285 270 265" class="water"/>
+  <path d="M747 296 C640 360 525 390 430 390 C370 390 350 335 315 320" class="water"/>
+  <g transform="translate(65 120)">
+    <rect x="0" y="0" width="155" height="28" rx="5" class="syringe"/>
+    <line x1="-45" y1="14" x2="0" y2="14" class="thin"/><line x1="-45" y1="2" x2="-45" y2="26" class="thin"/>
+    <rect x="0" y="75" width="155" height="28" rx="5" class="syringe"/>
+    <line x1="-45" y1="89" x2="0" y2="89" class="thin"/><line x1="-45" y1="77" x2="-45" y2="101" class="thin"/>
+    <rect x="0" y="150" width="155" height="28" rx="5" class="syringe"/>
+    <line x1="-45" y1="164" x2="0" y2="164" class="thin"/><line x1="-45" y1="152" x2="-45" y2="176" class="thin"/>
+    <text x="0" y="-15" class="small">master controls</text>
+    <text x="165" y="20" class="small">shoulder</text><text x="165" y="95" class="small">elbow</text><text x="165" y="170" class="small">gripper</text>
+  </g>
+  <path d="M245 478 L730 478" class="thin" marker-end="url(#arrow)"/>
+  <text x="335" y="508" class="small">lightweight payload transfer zone</text>
+</svg>

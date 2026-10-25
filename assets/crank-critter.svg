@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Crank Critter walking mechanism</title>
+  <desc id="desc">Diagram showing a crank disk, connecting rods, opposite-phase legs, and foot paths for a hand-powered walking mechanism.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#176b87"/></marker><style>text{font-family:Arial,sans-serif;fill:#17324d}.label{font-size:20px;font-weight:700}.small{font-size:16px}.bar{stroke:#17324d;stroke-width:12;stroke-linecap:round}.rod{stroke:#f2b134;stroke-width:10;stroke-linecap:round}.pivot{fill:#e85d3f;stroke:#17324d;stroke-width:3}.path{stroke:#25a8d9;stroke-width:4;stroke-dasharray:8 6;fill:none}</style></defs>
+  <rect width="960" height="520" fill="#f7fbfd"/><text x="40" y="45" class="label">Crank Critter — rotary motion to coordinated walking motion</text>
+  <path d="M220 200 L640 200 L680 250 L180 250 Z" fill="#94b49f" stroke="#17324d" stroke-width="4"/><text x="490" y="185" class="small">rigid body frame</text>
+  <circle cx="330" cy="225" r="55" fill="#f2b134" stroke="#17324d" stroke-width="4"/><circle cx="330" cy="225" r="7" class="pivot"/><circle cx="365" cy="190" r="7" class="pivot"/><line x1="330" y1="225" x2="365" y2="190" stroke="#17324d" stroke-width="5"/>
+  <path d="M300 145 A85 85 0 0 1 400 185" class="path" marker-end="url(#arrow)"/><text x="245" y="120" class="small">crank radius</text>
+  <line x1="365" y1="190" x2="480" y2="300" class="rod"/><circle cx="480" cy="300" r="8" class="pivot"/><line x1="480" y1="300" x2="420" y2="410" class="bar"/><line x1="480" y1="300" x2="555" y2="405" class="bar"/><circle cx="420" cy="410" r="7" class="pivot"/><circle cx="555" cy="405" r="7" class="pivot"/>
+  <line x1="295" y1="260" x2="230" y2="320" class="rod"/><circle cx="230" cy="320" r="8" class="pivot"/><line x1="230" y1="320" x2="165" y2="410" class="bar"/><line x1="230" y1="320" x2="315" y2="405" class="bar"/><circle cx="165" cy="410" r="7" class="pivot"/><circle cx="315" cy="405" r="7" class="pivot"/>
+  <path d="M120 450 C220 485 350 485 450 450" class="path"/><path d="M410 450 C530 485 670 485 755 450" class="path"/><text x="260" y="505" class="small">foot paths; compare 0°, 90°, and 180° phase</text>
+  <line x1="155" y1="435" x2="325" y2="435" stroke="#17324d" stroke-width="6"/><line x1="410" y1="435" x2="570" y2="435" stroke="#17324d" stroke-width="6"/>
+  <text x="645" y="220" class="small">Change one variable:</text><text x="645" y="248" class="small">• crank radius</text><text x="645" y="276" class="small">• leg length</text><text x="645" y="304" class="small">• phase angle</text><text x="645" y="332" class="small">• foot material</text>
+</svg>

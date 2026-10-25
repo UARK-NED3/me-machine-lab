@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Rescue Hoist two-stage gear reduction</title>
+  <desc id="desc">Diagram of a hand crank input, two 2 to 1 gear reduction stages, a rope drum, and a limited payload.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#176b87"/></marker><style>text{font-family:Arial,sans-serif;fill:#17324d}.label{font-size:20px;font-weight:700}.small{font-size:16px}.gear{fill:#f2b134;stroke:#17324d;stroke-width:4}.frame{fill:none;stroke:#17324d;stroke-width:7}.shaft{stroke:#6d8c9f;stroke-width:12}.rope{stroke:#e85d3f;stroke-width:4;fill:none}.guard{fill:#c7e7f4;fill-opacity:.45;stroke:#176b87;stroke-width:3;stroke-dasharray:8 7}</style></defs>
+  <rect width="960" height="520" fill="#f7fbfd"/><text x="40" y="45" class="label">Rescue Hoist — two-stage 4:1 gear reduction</text>
+  <rect x="75" y="100" width="700" height="280" rx="8" class="guard"/><text x="85" y="125" class="small">fixed pinch-point guard</text>
+  <line x1="170" y1="250" x2="700" y2="250" class="shaft"/>
+  <circle cx="230" cy="250" r="42" class="gear"/><circle cx="380" cy="250" r="82" class="gear"/><circle cx="500" cy="250" r="42" class="gear"/><circle cx="650" cy="250" r="82" class="gear"/>
+  <circle cx="230" cy="250" r="7" fill="#17324d"/><circle cx="380" cy="250" r="7" fill="#17324d"/><circle cx="500" cy="250" r="7" fill="#17324d"/><circle cx="650" cy="250" r="7" fill="#17324d"/>
+  <path d="M185 250 L115 250 L95 220 M115 250 L95 280" class="frame"/><text x="60" y="195" class="small">hand crank</text>
+  <path d="M380 165 L500 165" stroke="#17324d" stroke-width="12"/><text x="390" y="150" class="small">compound shaft</text>
+  <rect x="750" y="205" width="80" height="90" rx="15" fill="#6d8c9f" stroke="#17324d" stroke-width="4"/><line x1="650" y1="250" x2="790" y2="250" class="shaft"/><text x="742" y="190" class="small">rope drum</text>
+  <path d="M830 250 L870 250 L870 395" class="rope"/><rect x="840" y="395" width="60" height="40" rx="6" fill="#94b49f" stroke="#17324d" stroke-width="3"/><text x="820" y="465" class="small">100–250 g only</text>
+  <path d="M260 95 L355 95" stroke="#176b87" stroke-width="3" marker-end="url(#arrow)"/><text x="245" y="80" class="small">2:1</text><path d="M530 95 L625 95" stroke="#176b87" stroke-width="3" marker-end="url(#arrow)"/><text x="515" y="80" class="small">2:1</text>
+  <text x="350" y="495" class="small">24T → 48T, then 24T → 48T: nominal 4 input turns per drum turn</text>
+</svg>
