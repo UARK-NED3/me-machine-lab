@@ -1,0 +1,7 @@
+# Local and generated files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*.pdf
