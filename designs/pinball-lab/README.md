@@ -2,24 +2,25 @@
 
 ![Pinball Lab diagram](../../assets/pinball-lab.svg)
 
+![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
+
 Build a small hand-powered pinball game from a perforated panel, ordinary brackets, fasteners, springs, and bumpers. Teams earn points by defining their own scoring zones, then change one feature to control energy loss and ball paths.
 
-**Design status:** proposed; pilot validation required. This project intentionally uses no wood parts or custom-shaped plates.
+**Design status:** rendered concept; **not** yet an approved student build. The earlier category-only BOM has been retired. A full exact-item, no-fabrication BOM and physical pilot are required by the [build standard](../../docs/BUILD_STANDARD.md). This project intentionally excludes wood, custom-shaped plates, and any cutting or machining.
 
-## Bill of materials — one game
+## Exact purchased components captured to date — not a complete BOM
 
-| Item | Direct catalog specification | Qty. | Source |
+| Function | Exact supplier item | Qty. | Direct item link |
 | --- | --- | ---: | --- |
-| Playfield | Small perforated aluminum or steel sheet, about 300 × 400 mm | 1 | [McMaster: perforated sheet](https://www.mcmaster.com/products/perforated-metal/) |
-| Raised boundary | Bolt-together framing angle brackets or short 20 mm T-slot rails | 4 | [McMaster: structural framing](https://www.mcmaster.com/products/structural-framing/) |
-| Ball | One 3/8–1/2 in diameter steel or nylon ball | 1 | [McMaster: balls](https://www.mcmaster.com/products/balls/) |
-| Bumpers | Rubber bumpers or grommets with washers | 6–12 | [McMaster: rubber bumpers](https://www.mcmaster.com/products/rubber-bumpers/) |
-| Kickers | Light compression or extension springs and bolt/washer levers | 2–4 | [McMaster: spring kits](https://www.mcmaster.com/products/spring-kits/) |
-| Flipper pivots | M4 or #6 screws, washers, locknuts; two small angle brackets act as levers | 2 sets | [McMaster: screws](https://www.mcmaster.com/products/screws/) |
-| Launcher | Spring-loaded plunger or a bolt-and-spring lever, with a knob | 1 | [McMaster: spring plungers](https://www.mcmaster.com/products/spring-plungers/) |
-| Score labels | Repositionable adhesive labels | 1 sheet | [Amazon: removable labels](https://www.amazon.com/s?k=removable+adhesive+labels) |
+| Fixed-length frame member | McMaster `5537T368`, 20 mm T-slotted rail, 12 in. | 2 | [5537T368](https://www.mcmaster.com/5537T368/) |
+| Fixed-length cross member | McMaster `5537T2`, 20 mm T-slotted rail, 6 in. | 2 | [5537T2](https://www.mcmaster.com/5537T2/) |
+| Play ball | McMaster `9613K21`, 3/8 in. off-white nylon ball, 100-pack | 1 | [9613K21](https://www.mcmaster.com/9613K21/) |
+| Manual launcher candidate | McMaster `8478A1`, nonlocking plate-mount retractable spring plunger | 1 | [8478A1](https://www.mcmaster.com/8478A1/) |
+| Prototype spring pool | McMaster `9645K2`, 92-piece compression/extension spring assortment | 1 kit | [9645K2](https://www.mcmaster.com/9645K2/) |
 
-## Assembly
+**Release blockers:** a pre-made play surface, factory-featured bumper mounts, flipper modules, and every joining fastener have not yet been selected at item-number level. Do not purchase or improvise these items from a category page.
+
+## Conceptual assembly sequence — replace with an item-specific graphical manual after the release gate
 
 1. Bolt four rails or angle brackets around the playfield to make a raised perimeter; leave a release gap at the lower right.
 2. Mount the launcher at the lower end. It must launch only toward the raised boundary, not out of the table.

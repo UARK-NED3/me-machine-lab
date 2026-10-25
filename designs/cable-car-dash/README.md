@@ -2,23 +2,23 @@
 
 ![Cable-Car Dash diagram](../../assets/cable-car-dash.svg)
 
+![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
+
 Build two miniature bolt-together towers and a counterweighted car that travels between them. The target is to deliver a small payload to a marked station without overshoot.
 
-**Design status:** proposed; pilot validation required. No custom chassis is needed: use an off-the-shelf plastic box or small-parts bin as the car body.
+**Design status:** rendered concept; **not** yet an approved student build. The earlier category-only BOM has been retired. A full exact-item, no-fabrication BOM and physical pilot are required by the [build standard](../../docs/BUILD_STANDARD.md). No custom chassis is allowed; the car must be a fully specified, off-the-shelf item with factory mounting features.
 
-## Bill of materials — one system
+## Exact purchased components captured to date — not a complete BOM
 
-| Item | Direct catalog specification | Qty. | Source |
+| Function | Exact supplier item | Qty. | Direct item link |
 | --- | --- | ---: | --- |
-| Tower structure | 20 mm miniature T-slot rails, corner brackets, and fasteners | 2 tower sets | [McMaster: structural framing](https://www.mcmaster.com/products/structural-framing/) |
-| Sheaves | Two small rope pulleys with matching 5 mm shafts/bushings | 2–4 | [McMaster: pulleys](https://www.mcmaster.com/products/pulleys/) |
-| Line | 1–2 mm braided cord | 2 m | [McMaster: rope](https://www.mcmaster.com/products/rope/) |
-| Car body | Small plastic enclosure or lidded parts box | 1 | [McMaster: plastic enclosures](https://www.mcmaster.com/products/plastic-enclosures/) |
-| Car rollers | Two small wheels, bearings, or pulley wheels on bolts | 4 | [McMaster: wheels](https://www.mcmaster.com/products/caster-wheels/) |
-| Counterweight | Steel washers contained in a closed pouch or box | up to 250 g | [McMaster: washers](https://www.mcmaster.com/products/washers/) |
-| Drive option | Hand knob on pulley shaft; optional low-speed 3–6 V gearmotor | 1 | [Amazon: 3–6 V gearmotor](https://www.amazon.com/s?k=3v+6v+dc+gearmotor) |
+| Fixed-length tower member | McMaster `5537T368`, 20 mm T-slotted rail, 12 in. | 4 | [5537T368](https://www.mcmaster.com/5537T368/) |
+| Fixed-length brace member | McMaster `5537T2`, 20 mm T-slotted rail, 6 in. | 4 | [5537T2](https://www.mcmaster.com/5537T2/) |
+| Candidate drive pulley | McMaster `3684N12`, 2MGT 20-tooth, 5 mm finished-bore timing pulley with set screw | 2 | [3684N12](https://www.mcmaster.com/3684N12/) |
 
-## Assembly
+**Release blockers:** no exact, factory-mountable tower bracket, shaft support, cable/termination, gondola, guide-roller, counterweight enclosure, or fastener has yet been confirmed. The listed pulley is a timing-belt component; it is *not* a released rope sheave. Do not use the earlier generic rope/pulley substitutions.
+
+## Conceptual assembly sequence — replace with an item-specific graphical manual after the release gate
 
 1. Build two towers about 300–450 mm apart, with pulley centers at equal height. Brace them to a base or clamp them to a table.
 2. Install the travel line between towers. Add a second line or parallel guide if the car twists excessively.

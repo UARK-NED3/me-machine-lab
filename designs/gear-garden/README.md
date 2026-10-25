@@ -2,22 +2,24 @@
 
 ![Gear Garden diagram](../../assets/gear-garden.svg)
 
+![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
+
 Make a colorful, hand-cranked “garden” in which several plastic gears rotate at different speeds and directions. It is deliberately toy-like, yet every visible element is a conventional machine component.
 
-**Design status:** proposed; pilot validation required. Decorative tags, caps, and cable ties should be treated as non-load-bearing.
+**Design status:** rendered concept; **not** yet an approved student build. The earlier category-only BOM has been retired. A full exact-item, no-fabrication BOM and physical pilot are required by the [build standard](../../docs/BUILD_STANDARD.md). Decorative parts remain non-load-bearing.
 
-## Bill of materials — one sculpture
+## Exact purchased components captured to date — not a complete BOM
 
-| Item | Direct catalog specification | Qty. | Source |
+| Function | Exact supplier item | Qty. | Direct item link |
 | --- | --- | ---: | --- |
-| Frame | Miniature 20 mm T-slot rails, corner brackets, and a mounting plate | 1 set | [McMaster: structural framing](https://www.mcmaster.com/products/structural-framing/) |
-| Gear family | Module 1, 20° pressure-angle plastic spur gears; e.g., 20-, 30-, and 40-tooth sizes with 5 mm bores | 5–8 | [McMaster: gears](https://www.mcmaster.com/products/gears/) |
-| Axles | 5 mm shafts, bushings/bearings, and shaft collars | 4–6 sets | [McMaster: power transmission](https://www.mcmaster.com/products/power-transmission/) |
-| Crank | Small handwheel or knob with a shaft coupling | 1 | [McMaster: hand wheels](https://www.mcmaster.com/products/hand-wheels/) |
-| Decorations | Colored cable ties, plastic caps, tags, and hook-and-loop straps | assorted | [McMaster: cable ties](https://www.mcmaster.com/products/cable-ties/) |
-| Guard | Clear plastic panel or generous gear spacing | 1 | [McMaster: clear plastic sheet](https://www.mcmaster.com/products/clear-plastic-sheets/) |
+| Fixed-length base member | McMaster `5537T368`, 20 mm T-slotted rail, 12 in. | 2 | [5537T368](https://www.mcmaster.com/5537T368/) |
+| Fixed-length cross member | McMaster `5537T2`, 20 mm T-slotted rail, 6 in. | 2 | [5537T2](https://www.mcmaster.com/5537T2/) |
+| Driver gear | McMaster `2664N316`, module 0.5, 24-tooth steel spur gear, 5 mm set-screw bore | 1 | [2664N316](https://www.mcmaster.com/2664N316/) |
+| Driven gear | McMaster `2664N321`, module 0.5, 36-tooth steel spur gear, 5 mm set-screw bore | 1 | [2664N321](https://www.mcmaster.com/2664N321/) |
 
-## Assembly
+**Release blockers:** a fixed-length 5 mm shaft, factory-mountable supports, T-slot brackets/fasteners, a hand crank, pinch guard, and each decorative attachment have not yet been selected at item-number level. The visual’s plastic gears are illustrative; the currently checked gears are steel. Do not substitute raw stock or a cut panel.
+
+## Conceptual assembly sequence — replace with an item-specific graphical manual after the release gate
 
 1. Build a 200–250 mm wide frame with a vertical mounting plate or two rails that hold the gear shafts parallel.
 2. Choose one gear family and place shafts so adjacent gears mesh with modest backlash, not forced contact.

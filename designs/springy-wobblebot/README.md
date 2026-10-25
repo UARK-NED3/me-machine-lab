@@ -2,23 +2,21 @@
 
 ![Springy Wobblebot diagram](../../assets/springy-wobblebot.svg)
 
+![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
+
 Build a small, expressive creature that travels by vibrating an unbalanced motor on spring legs. Its body is an ordinary plastic enclosure; its legs, feet, and “antennae” are catalog parts that can be reconfigured without shaping a custom chassis.
 
-**Design status:** proposed; pilot validation required. Use a 3 V battery supply only.
+**Design status:** rendered concept; **not** yet an approved student build. The earlier category-only BOM has been retired. A full exact-item, no-fabrication BOM and physical pilot are required by the [build standard](../../docs/BUILD_STANDARD.md). Any future release is limited to a 3 V battery supply; a wall supply is excluded.
 
-## Bill of materials — one Wobblebot
+## Exact purchased components captured to date — not a complete BOM
 
-| Item | Direct catalog specification | Qty. | Source |
+| Function | Exact supplier item | Qty. | Direct item link |
 | --- | --- | ---: | --- |
-| Body | Small plastic project enclosure with lid | 1 | [McMaster: plastic enclosures](https://www.mcmaster.com/products/plastic-enclosures) |
-| Legs | Four light compression springs, 20–40 mm free length | 4 | [McMaster: compression springs](https://www.mcmaster.com/products/compression-springs/) |
-| Feet | Small rubber bumpers or soft vinyl caps | 4 | [McMaster: rubber bumpers](https://www.mcmaster.com/products/rubber-bumpers/) |
-| Motor | 3 V DC motor with a 2–3 mm shaft | 1 | [Amazon: 3 V DC motor](https://www.amazon.com/s?k=3v+dc+motor+mini) |
-| Eccentric mass | Small shaft collar sized to motor shaft; mount off-axis | 1 | [McMaster: shaft collars](https://www.mcmaster.com/products/shaft-collars/) |
-| Power and switch | 2×AA holder, low-voltage switch, and insulated leads | 1 set | [Amazon: 2 AA battery holder switch](https://www.amazon.com/s?k=2+aa+battery+holder+with+switch) |
-| Attachment hardware | Small screws, washers, cable ties, and hook-and-loop strap | assorted | [McMaster: cable ties](https://www.mcmaster.com/products/cable-ties/) |
+| Prototype spring pool | McMaster `9645K2`, 92-piece compression/extension spring assortment | 1 kit | [9645K2](https://www.mcmaster.com/9645K2/) |
 
-## Assembly
+**Release blockers:** the enclosure, foot, exact motor, motor mount, eccentric mass, battery holder, switch, wire routing, and every attachment still require exact item numbers and a guarded physical prototype. A generic Amazon search is not a valid substitute. Do not operate this concept until those blockers are resolved.
+
+## Conceptual assembly sequence — replace with an item-specific graphical manual after the release gate
 
 1. Attach the four springs to the enclosure underside with screws/washers or cable ties through existing enclosure features. Add rubber feet to the spring ends.
 2. Secure the motor to the top of the enclosure using a clamp or two cable ties; it must not rotate relative to the body.

@@ -2,7 +2,7 @@
 
 Open, hands-on mechanical-engineering outreach projects for students who learn by designing, building, measuring, and improving real mechanisms.
 
-> **Design status — proposed, not yet build-validated.** The first release provides facilitator-ready concepts, sourceable bills of materials, and assembly procedures. Dimensions, load limits, sourcing substitutions, and run time must be pilot-tested by the hosting team before use with students.
+> **Design status — rendered concepts, not yet build-ready.** The repository now enforces a no-fabrication release gate: no cutting, drilling, milling, machining, or custom-shaped build pieces. A project may be promoted to a student build only after its *entire* BOM has exact supplier part numbers and a physical pilot has checked fit, containment, and safe operation. See the [no-fabrication build standard](docs/BUILD_STANDARD.md).
 
 ## Start here
 
@@ -20,17 +20,21 @@ Open, hands-on mechanical-engineering outreach projects for students who learn b
 
 Every project follows the same cycle: **make a mechanism → measure a result → change one variable → explain the physical reason.** A build is not presented as a validated scientific result; it is a controlled, safe demonstration and design challenge.
 
-Projects are deliberately low-voltage or hand-powered. The common kit is reusable, while common craft materials can be replenished economically. See [procurement guidance](docs/PROCUREMENT.md) and [safety requirements](docs/SAFETY.md) before purchasing or running an event.
+Projects are deliberately low-voltage or hand-powered. The common kit is reusable and avoids wood, cut stock, and student-made structural pieces. See [the exact-item ledger and release rule](docs/BUILD_STANDARD.md), [procurement guidance](docs/PROCUREMENT.md), and [safety requirements](docs/SAFETY.md) before purchasing or running an event.
 
 ## Catalog-parts toy track
 
-The four projects added above are designed around a reusable **catalog-parts chassis**, rather than wood craft sticks, custom laser-cut pieces, or machined components. Students assemble pre-existing rails, brackets, gears, shafts, bearings, springs, wheels, plastic enclosures, and fasteners. See [Catalog-parts toy system](docs/CATALOG_TOY_SYSTEM.md) for the shared interface standard and sourcing rationale.
+The four projects added above are designed around a reusable **catalog-parts chassis**, rather than wood craft sticks, custom laser-cut pieces, or machined components. Students assemble pre-existing rails, brackets, gears, shafts, bearings, springs, wheels, plastic enclosures, and fasteners. The [catalog-parts toy system](docs/CATALOG_TOY_SYSTEM.md) explains the shared interfaces. The [graphical assembly flow](assets/manuals/catalog-toy-assembly-flow.svg) shows the required no-fabrication method.
+
+![Illustrative isometric concepts for the catalog-parts toy track](assets/renders/catalog-toys-concept-render-v1.png)
+
+*Illustrative concept render only. It is not a geometry-certified CAD model or a substitute for the exact-item BOM and physical pilot required by the build standard.*
 
 ## Repository layout
 
 ```text
 designs/       One folder per activity: BOM, assembly, challenge, and facilitator notes
-assets/        Editable SVG mechanism diagrams
+assets/        Editable SVG mechanism diagrams, graphical manuals, and labeled concept renders
 docs/          Common procurement, safety, and event-planning guidance
 ```
 
