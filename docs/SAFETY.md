@@ -15,6 +15,10 @@
 | HydroGrab | Water only; use needleless syringes. Wipe spills immediately and protect nearby electronics. Lift foam, paper, or other light objects only. |
 | Rescue Hoist | Establish a 250 g maximum suspended mass and a 20 cm lift height. Use a soft catcher below the payload. Do not hold a hand or foot under the load. |
 | Crank Critter | Use rounded craft sticks and blunt fasteners. Stop the mechanism before adjusting pivots. |
+| Pinball Lab | Use only one 3/8–1/2 in ball per table and a raised perimeter. Do not aim or release the ball toward people. |
+| Cable-Car Dash | Counterweights must remain below 250 g and within a clear vertical drop zone. Keep hands away from rope and pulleys while moving. |
+| Gear Garden | Cover or space exposed gear meshes so fingers cannot enter while cranking. |
+| Springy Wobblebot | Use a 3 V battery supply only; disconnect before adjusting the eccentric mass. Do not use damaged cells or a swollen battery. |
 
 ## Stop-work conditions
 

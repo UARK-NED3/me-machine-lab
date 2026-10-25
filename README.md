@@ -11,12 +11,20 @@ Open, hands-on mechanical-engineering outreach projects for students who learn b
 | [HydroGrab](designs/hydrograb/README.md) | Water-powered tabletop pick-and-place arm | Grades 6–10 | 75–90 min | Force–displacement tradeoff and linkages |
 | [Rescue Hoist](designs/rescue-hoist/README.md) | Hand-cranked two-stage gear winch | Grades 7–12 | 90–120 min | Gear ratio, torque, and friction |
 | [Crank Critter](designs/crank-critter/README.md) | Crank-driven walking mechanism or automaton | Grades 5–10 | 45–75 min | Degrees of freedom, pivots, and kinematics |
+| [Pinball Lab](designs/pinball-lab/README.md) | Reconfigurable, hand-powered mini pinball game | Grades 6–12 | 60–90 min | Energy loss, impacts, and design for play |
+| [Cable-Car Dash](designs/cable-car-dash/README.md) | Counterweighted cable car on a bolt-together tower | Grades 6–12 | 60–90 min | Pulleys, counterbalance, and speed control |
+| [Gear Garden](designs/gear-garden/README.md) | Colorful hand-cranked kinetic sculpture | Grades 5–12 | 45–75 min | Gear ratios and phase relationships |
+| [Springy Wobblebot](designs/springy-wobblebot/README.md) | Battery-powered vibrating creature on spring legs | Grades 5–10 | 30–60 min | Unbalance, vibration, and friction |
 
 ## Design philosophy
 
 Every project follows the same cycle: **make a mechanism → measure a result → change one variable → explain the physical reason.** A build is not presented as a validated scientific result; it is a controlled, safe demonstration and design challenge.
 
 Projects are deliberately low-voltage or hand-powered. The common kit is reusable, while common craft materials can be replenished economically. See [procurement guidance](docs/PROCUREMENT.md) and [safety requirements](docs/SAFETY.md) before purchasing or running an event.
+
+## Catalog-parts toy track
+
+The four projects added above are designed around a reusable **catalog-parts chassis**, rather than wood craft sticks, custom laser-cut pieces, or machined components. Students assemble pre-existing rails, brackets, gears, shafts, bearings, springs, wheels, plastic enclosures, and fasteners. See [Catalog-parts toy system](docs/CATALOG_TOY_SYSTEM.md) for the shared interface standard and sourcing rationale.
 
 ## Repository layout
 
