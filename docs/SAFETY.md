@@ -7,6 +7,7 @@
 - Require eye protection for any drilling, cutting, or test involving a suspended load. Facilitators—not students—operate drills, saws, hot glue, or laser cutters.
 - Keep fingers clear of gears, winch drums, and linkage pivots while a mechanism is moving. Tie back hair; do not wear loose sleeves or jewelry.
 - Inspect all fasteners, sharp edges, tubing connections, and load attachments between groups. Remove damaged components from service.
+- Never aim a student-built optical instrument at the Sun, a laser, a welding arc, or a bright specular reflection. Eclipse glasses at the eye do not make an unfiltered monocular safe; this repository does not authorize solar viewing.
 
 ## Project-specific boundaries
 
@@ -19,6 +20,7 @@
 | Cable-Car Dash | Counterweights must remain below 250 g and within a clear vertical drop zone. Keep hands away from rope and pulleys while moving. |
 | Gear Garden | Cover or space exposed gear meshes so fingers cannot enter while cranking. |
 | Springy Wobblebot | Use a 3 V battery supply only; disconnect before adjusting the eccentric mass. Do not use damaged cells or a swollen battery. |
+| Build-a-Monocular Lab | Supervised terrestrial viewing only. Never aim at the Sun, lasers, welding arcs, or bright reflections; inspect each lens and retaining ring before use. |
 
 ## Stop-work conditions
 

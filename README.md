@@ -15,6 +15,7 @@ Open, hands-on mechanical-engineering outreach projects for students who learn b
 | [Cable-Car Dash](designs/cable-car-dash/README.md) | Counterweighted cable car on a bolt-together tower | Grades 6–12 | 60–90 min | Pulleys, counterbalance, and speed control |
 | [Gear Garden](designs/gear-garden/README.md) | Colorful hand-cranked kinetic sculpture | Grades 5–12 | 45–75 min | Gear ratios and phase relationships |
 | [Springy Wobblebot](designs/springy-wobblebot/README.md) | Battery-powered vibrating creature on spring legs | Grades 5–10 | 30–60 min | Unbalance, vibration, and friction |
+| [Build-a-Monocular Lab](designs/monocular-lab/README.md) | Threaded 3× Galilean monocular for terrestrial viewing | Grades 8–12 | 45–60 min | Focal length, angular magnification, and focus |
 
 ## Design philosophy
 
