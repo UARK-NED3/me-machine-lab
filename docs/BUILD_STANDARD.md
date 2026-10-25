@@ -5,7 +5,7 @@ This repository uses **no-fabrication** in a literal sense. A student or facilit
 ## Allowed operations
 
 - Tighten or loosen a supplied screw, nut, T-slot fastener, shaft collar, or set screw with a hand tool.
-- Route cord, attach a cable tie, place a ball, adjust a spring only within its supplied configuration, and apply a removable label.
+- Route or tie a supplied, uncut cord; attach a cable tie; place a ball; adjust a spring only within its supplied configuration; apply a removable label; or press on a supplied adhesive bumper.
 - Use a threaded hole, clearance hole, slot, T-slot, bearing bore, or mounting pattern that already exists on the purchased part.
 
 ## Prohibited operations
@@ -16,7 +16,13 @@ This repository uses **no-fabrication** in a literal sense. A student or facilit
 
 ## Release gate
 
-A design is **build-ready** only when its BOM has an exact supplier item number (or Amazon ASIN), quantity, and direct item link for every purchased item; its instructions use only the allowed operations; and a physical pilot has checked fit, motion, containment, and safety. Until then it is a **rendered concept**. A render or SVG is an explanatory visual, not evidence that an assembly has been physically validated.
+A design is **build-ready** only when its BOM has an exact supplier item number (or Amazon ASIN), quantity, package/yield, and direct item link for every purchased item; its instructions use only the allowed operations; and a physical pilot has checked fit, motion, containment, and safety. Until then it is a **rendered concept**. A render or SVG is an explanatory visual, not evidence that an assembly has been physically validated.
+
+## Complete-BOM convention
+
+The four catalog-toy projects now use a procurement-complete, lower-fidelity route based chiefly on VEX V5 fixed-size, perforated components. This is intentional: it replaces the custom-looking rails, guards, and shaped bodies in the renders with factory-hole metal and plastic components that students can assemble without fabrication. A BOM row that says **kit** is a single, exact purchasing line; its ``use`` column states how many of the included pieces the project consumes. The kit contents must not be silently substituted.
+
+The BOMs are complete for purchasing, not yet pilot-certified for fit or classroom use. In particular, the proposed alignment of the McMaster hinge/plunger to the VEX hole pattern, counterweight travel, exposed-mesh guarding, adhesive-foot retention, and all moving clearances must be checked on a physical first article.
 
 ## Current catalog references verified at item level
 

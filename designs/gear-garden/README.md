@@ -4,41 +4,50 @@
 
 ![Illustrative 3D concept render of Gear Garden](render-concept-v1.png)
 
-*Illustrative 3D concept render, not a dimensioned CAD assembly or a substitute for the exact-item BOM and physical pilot.*
+*Illustrative 3D concept render. The purchasable version trades sculpted flowers and a custom clear cover for a fully factory-perforated VEX plate sandwich: the gears remain visible through the top-hole pattern but inaccessible from above.*
 
-![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
+![Graphical no-fabrication assembly flow](../../assets/manuals/catalog-toy-assembly-flow.svg)
 
-Make a colorful, hand-cranked “garden” in which several plastic gears rotate at different speeds and directions. It is deliberately toy-like, yet every visible element is a conventional machine component.
+Students build a hand-cranked gear train and add non-load-bearing cable-tie “petals.” The core lesson is speed ratio and direction reversal, not decorative precision.
 
-**Design status:** rendered concept; **not** yet an approved student build. The earlier category-only BOM has been retired. A full exact-item, no-fabrication BOM and physical pilot are required by the [build standard](../../docs/BUILD_STANDARD.md). Decorative parts remain non-load-bearing.
+**Status:** procurement-complete rendered concept; **not yet classroom-release ready.** The BOM buys every proposed component, including the no-cut guard strategy. A physical first article must verify gear mesh, shaft capture, crank clearance, and guard effectiveness before public use. See the [build standard](../../docs/BUILD_STANDARD.md).
 
-## Exact purchased components captured to date — not a complete BOM
+## What the purchasable version changes
 
-| Function | Exact supplier item | Qty. | Direct item link |
-| --- | --- | ---: | --- |
-| Fixed-length base member | McMaster `5537T368`, 20 mm T-slotted rail, 12 in. | 2 | [5537T368](https://www.mcmaster.com/5537T368/) |
-| Fixed-length cross member | McMaster `5537T2`, 20 mm T-slotted rail, 6 in. | 2 | [5537T2](https://www.mcmaster.com/5537T2/) |
-| Driver gear | McMaster `2664N316`, module 0.5, 24-tooth steel spur gear, 5 mm set-screw bore | 1 | [2664N316](https://www.mcmaster.com/2664N316/) |
-| Driven gear | McMaster `2664N321`, module 0.5, 36-tooth steel spur gear, 5 mm set-screw bore | 1 | [2664N321](https://www.mcmaster.com/2664N321/) |
+| Rendered feature | No-fabrication implementation |
+| --- | --- |
+| Individually mounted, open decorative gears | VEX acetal gears captured between two perforated aluminum plates |
+| Clear shaped guard | Second perforated plate plus standoffs; its factory holes allow viewing but exclude fingers from the gear faces |
+| Flower-shaped ornaments | Removable full-length cable ties, kept outside the plate sandwich and clear of teeth |
+| Custom crank | 60-tooth gear and factory-hole 1x25 bar used as a large hand crank |
 
-**Release blockers:** a fixed-length 5 mm shaft, factory-mountable supports, T-slot brackets/fasteners, a hand crank, pinch guard, and each decorative attachment have not yet been selected at item-number level. The visual’s plastic gears are illustrative; the currently checked gears are steel. Do not substitute raw stock or a cut panel.
+## Complete bill of materials — one Gear Garden
 
-## Conceptual assembly sequence — replace with an item-specific graphical manual after the release gate
+| Function | Exact item and purchased configuration | Buy | Use | Direct item link |
+| --- | --- | ---: | ---: | --- |
+| Perforated base and fixed upper finger guard | VEX V5 `276-2311`, 5 x 25 Aluminum Plate | 1 pack | 2 plates | [276-2311](https://www.vexrobotics.com/276-2311.html) |
+| Shafts, flat bearings, shaft collars, standoffs, washers, #8-32 screws and nuts; one factory-hole 1x25 crank bar | VEX V5 `276-2161`, Metal & Hardware Kit | 1 kit | 4 shafts; 8 flat bearings; 8 standoffs; 1 bar; hardware as supplied | [276-2161](https://www.vexrobotics.com/276-2161.html) |
+| Matched 24-DP gears | VEX V5 `276-2169`, Gear Kit | 1 kit | 1 each of 12T, 36T, 60T, and 84T gear | [276-2169](https://www.vexrobotics.com/276-2169.html) |
+| Decorations and non-load-bearing labels | VEX V5 `276-1032`, cable ties | 1 pack | 8 ties | [276-1032](https://www.vexrobotics.com/276-1032.html) |
+| Shared assembly tools | VEX V5 `276-1382`, Tool Kit | 1 shared kit | 1 wrench and 2 hex keys | [276-1382](https://www.vexrobotics.com/276-1382.html) |
 
-1. Build a 200–250 mm wide frame with a vertical mounting plate or two rails that hold the gear shafts parallel.
-2. Choose one gear family and place shafts so adjacent gears mesh with modest backlash, not forced contact.
-3. Fix a handwheel to the input shaft. Add a 20-tooth driver, then choose different driven gear sizes for visibly distinct speeds.
-4. Lock each gear to its shaft with a collar or hub. Free-spinning decorations may be mounted with a washer and small clearance.
-5. Add colored cable ties or tags only after the drive train runs smoothly; keep them clear of meshes.
-6. Have teams create a repeatable pattern: two “flowers” in opposite directions, one slower/larger flower, or a gear that carries a turning flag.
-7. Add a clear guard or maintain a finger-safe separation around every mesh before public use.
+No raw sheet, stock shaft, fabricated spacer, custom guard, or extra fastener is required.
+
+## Item-specific assembly sequence
+
+1. Place two `276-2311` plates parallel, with the first as the base and the second as the upper guard. Join them with eight supplied 1-in. VEX standoffs at the factory-hole grid, producing a protected internal gear space.
+2. Install four VEX flat bearings in selected factory holes of both plates. Pass the supplied shafts through matched bearing pairs; capture each with supplied shaft collars so no shaft can drift into a plate.
+3. Place the 12T, 36T, 60T, and 84T gears from `276-2169` between the plates. Begin with 12T-to-36T and 36T-to-60T meshes; use the 84T gear only after the first two meshes rotate freely. The teeth must mesh without forced contact.
+4. Lock each driven gear to its shaft with a supplied collar or the gear’s intended shaft engagement. Bolt one `276-2161` 1x25 bar to the 60T gear’s factory mounting holes to make the hand crank. Its unused full length is intentional; do not shorten it.
+5. Add up to eight full cable ties as petals/flags only on exterior hardware. Keep every tie end outside the sandwich and at least one gear radius from a mesh; do not trim the tails.
+6. Turn the crank slowly through 20 revolutions. If any mesh binds, stop and reposition the shaft using only factory holes before allowing students to operate it.
+
+## First-article checks before release
+
+- Verify the selected gear centers give clearance/backlash rather than tooth-bottom contact; all gears in `276-2169` share the specified 24-DP, 20-degree system.
+- Confirm the upper plate and standoff spacing prevent a child’s finger from reaching the faces or teeth while the crank is turned.
+- Confirm the bar crank clears the plate, tabletop, nearby students, and its own cable-tie ornaments through a full rotation.
 
 ## Physics prompt
 
-For two meshing external gears, the gears rotate in opposite directions and \(\omega_2/\omega_1=-N_1/N_2\). Compare a 20-tooth driver coupled to 20-, 30-, and 40-tooth gears. The minus sign denotes direction reversal; it is not a negative speed magnitude.
-
-## Success criteria
-
-- All meshing gears share module and pressure angle.
-- The sculpture can run for 20 crank turns without a gear climbing or a decoration entering a mesh.
-- Teams can predict the relative speed and direction of a selected output before turning the crank.
+For two meshing external gears, \(\omega_2/\omega_1=-N_1/N_2\). The minus sign denotes direction reversal. Have students predict the direction and relative speed of the 36T and 60T gears before turning the crank, then compare prediction with observation.

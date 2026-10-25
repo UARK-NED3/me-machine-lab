@@ -8,13 +8,13 @@ For a first pilot, use the following system consistently:
 
 | Interface | Recommended choice | Why it matters |
 | --- | --- | --- |
-| Structure | Miniature 20 mm T-slotted aluminum rails and brackets | Rails and brackets make frames reconfigurable with no student cutting. |
-| Rotary components | 5 mm shaft, 5 mm bore bearing/bushing, 5 mm shaft collar | One shaft diameter prevents most fit errors. |
-| Gears | Module 1, 20° pressure-angle plastic spur gears | A common module and pressure angle lets any selected gear pair mesh. |
-| Fasteners | M4 screw, washer, and locknut assortment | One tool size streamlines assembly. |
+| Structure | VEX V5 factory-perforated plates, C-channels, rails, and gussets | Fixed-size factory-hole parts create frames without student cutting. |
+| Rotary components | VEX 0.125-in. square shaft, VEX bearing, and VEX shaft collar | One shaft family prevents most fit errors in the mechanical builds. |
+| Gears | VEX `276-2169` 24-DP, 20° pressure-angle gear family | The entire Gear Garden drive train uses one specified compatible family. |
+| Fasteners | VEX `276-2161` supplied #8-32 screw/nut/washer family | One supplied tool/hardware system streamlines assembly. |
 | Decorative/function pieces | Colored cable ties, plastic knobs, small boxes, springs, wheels, and caps | These are real catalog components—not custom silhouettes—and give each toy identity. |
 
-McMaster lists miniature T-slotted framing, rail brackets, shaft mounts, and related components as a modular construction system. [Structural framing](https://www.mcmaster.com/products/structural-framing/) Gear pairs must share type, pressure angle, and pitch/module; use one compatible family throughout a model. [Gear selection guide](https://www.mcmaster.com/info/how-to-choose-a-gear.html) The system description is not a purchase list: the [exact-item ledger and no-fabrication release gate](BUILD_STANDARD.md) control what may enter a released design.
+VEX lists the current C-channel, plate, gusset, gear, and hardware kits used by the four BOMs. [VEX structure](https://www.vexrobotics.com/v5-structure.html) Gear pairs must share type, pressure angle, and pitch/module; use one compatible family throughout a model. [Gear selection guide](https://www.mcmaster.com/info/how-to-choose-a-gear.html) The system description is not a purchase list: the project-level exact-item BOM and [no-fabrication release gate](BUILD_STANDARD.md) control what may enter a released design.
 
 ## Why this is better suited to the outreach goal
 
@@ -33,4 +33,4 @@ McMaster lists miniature T-slotted framing, rail brackets, shaft mounts, and rel
 
 ## Procurement status
 
-The part classes and compatibility rules are **source-checked** against McMaster’s current catalog. Several specific examples are now recorded in [BUILD_STANDARD.md](BUILD_STANDARD.md); however, these toy concepts are not yet full, repeatable kits. Exact part numbers, package sizes, availability, cost, and each fastener interface must be completed and physically pilot-verified before a configuration is offered to students.
+The four project READMEs now contain **procurement-complete, exact-item BOMs** with package yield and direct item links. They deliberately use VEX fixed-size perforated structure as a lower-fidelity alternative to the custom-looking render hardware. The remaining release condition is physical—not clerical: fit, motion, containment, guarding, electrical integrity, availability, and safety still require first-article pilot verification before a configuration is offered to students.
