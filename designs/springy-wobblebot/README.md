@@ -2,6 +2,10 @@
 
 ![Springy Wobblebot diagram](../../assets/springy-wobblebot.svg)
 
+![Illustrative 3D concept render of Springy Wobblebot](render-concept-v1.png)
+
+*Illustrative 3D concept render, not a dimensioned CAD assembly or a substitute for the exact-item BOM and physical pilot.*
+
 ![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
 
 Build a small, expressive creature that travels by vibrating an unbalanced motor on spring legs. Its body is an ordinary plastic enclosure; its legs, feet, and “antennae” are catalog parts that can be reconfigured without shaping a custom chassis.

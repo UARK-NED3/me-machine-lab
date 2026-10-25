@@ -2,6 +2,10 @@
 
 ![Cable-Car Dash diagram](../../assets/cable-car-dash.svg)
 
+![Illustrative 3D concept render of Cable-Car Dash](render-concept-v1.png)
+
+*Illustrative 3D concept render, not a dimensioned CAD assembly or a substitute for the exact-item BOM and physical pilot.*
+
 ![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
 
 Build two miniature bolt-together towers and a counterweighted car that travels between them. The target is to deliver a small payload to a marked station without overshoot.

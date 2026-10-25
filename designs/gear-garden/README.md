@@ -2,6 +2,10 @@
 
 ![Gear Garden diagram](../../assets/gear-garden.svg)
 
+![Illustrative 3D concept render of Gear Garden](render-concept-v1.png)
+
+*Illustrative 3D concept render, not a dimensioned CAD assembly or a substitute for the exact-item BOM and physical pilot.*
+
 ![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
 
 Make a colorful, hand-cranked “garden” in which several plastic gears rotate at different speeds and directions. It is deliberately toy-like, yet every visible element is a conventional machine component.

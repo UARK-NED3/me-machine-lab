@@ -2,6 +2,10 @@
 
 ![Pinball Lab diagram](../../assets/pinball-lab.svg)
 
+![Illustrative 3D concept render of Pinball Lab](render-concept-v1.png)
+
+*Illustrative 3D concept render, not a dimensioned CAD assembly or a substitute for the exact-item BOM and physical pilot.*
+
 ![No-fabrication graphical assembly method](../../assets/manuals/catalog-toy-assembly-flow.svg)
 
 Build a small hand-powered pinball game from a perforated panel, ordinary brackets, fasteners, springs, and bumpers. Teams earn points by defining their own scoring zones, then change one feature to control energy loss and ball paths.
