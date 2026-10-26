@@ -2,6 +2,10 @@
 
 ![Rescue Hoist mechanism diagram](../../assets/rescue-hoist.svg)
 
+![Illustrative 3D concept render of Rescue Hoist](render-concept-v1.png)
+
+*Illustrative 3D concept render of a factory-perforated, catalog-parts hoist. The legacy BOM below is retained for audit traceability and does **not** yet specify this no-fabrication rendered configuration.*
+
 ## Purpose and challenge
 
 Teams build a guarded, hand-cranked winch with a two-stage 4:1 gear reduction, then lift a 100–250 g payload through 20 cm. They compare handle turns, lifting time, and perceived effort with a direct-drive configuration.

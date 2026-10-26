@@ -2,6 +2,10 @@
 
 ![Crank Critter mechanism diagram](../../assets/crank-critter.svg)
 
+![Illustrative 3D concept render of Crank Critter](render-concept-v1.png)
+
+*Illustrative 3D concept render of a catalog-parts linkage creature. The legacy craft-material BOM below is retained for audit traceability and does **not** yet specify this no-fabrication rendered configuration.*
+
 ## Purpose and challenge
 
 Teams make a hand-cranked creature, character, or machine in which a rotating crank drives two or more repeating motions. The performance challenge is to traverse 1 m, create the most repeatable gait, or tell a short mechanical story with at least two coordinated motions.

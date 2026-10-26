@@ -2,6 +2,10 @@
 
 ![HydroGrab mechanism diagram](../../assets/hydrograb.svg)
 
+![Illustrative 3D concept render of HydroGrab](render-concept-v1.png)
+
+*Illustrative 3D concept render of the catalog-parts direction: a syringe-and-tube hydraulic arm on factory-perforated structure. The legacy BOM below is retained for audit traceability and does **not** yet specify this no-fabrication rendered configuration.*
+
 ## Purpose and challenge
 
 Teams build a two-link arm with a gripper, then transfer a foam block from a pickup zone to a target bin. The scoring task is intentionally low-load: place three blocks accurately, then modify one feature to improve reach, lifting force, or placement repeatability.
