@@ -2,66 +2,67 @@
 
 ![HydroGrab mechanism diagram](../../assets/hydrograb.svg)
 
-![Illustrative 3D concept render of HydroGrab](render-concept-v1.png)
+![BOM-constrained 3D render of HydroGrab](render-bom-constrained-v2.png)
 
-*Illustrative 3D concept render of the catalog-parts direction: a syringe-and-tube hydraulic arm on factory-perforated structure. The legacy BOM below is retained for audit traceability and does **not** yet specify this no-fabrication rendered configuration.*
+*Illustrative, BOM-constrained 3D render. It depicts the factory-perforated VEX structure, uncut Luer extension sets, 20 mL syringe pairs, cable-tie retention, and the VEX Claw Kit called out below. It is not evidence of a physical first article.*
 
 ## Purpose and challenge
 
-Teams build a two-link arm with a gripper, then transfer a foam block from a pickup zone to a target bin. The scoring task is intentionally low-load: place three blocks accurately, then modify one feature to improve reach, lifting force, or placement repeatability.
+Teams assemble a two-link, syringe-actuated tabletop arm from stock parts only, then use the claw to move a light classroom object. The activity contrasts ideal hydraulic force/displacement relations with loss of accuracy from air, friction, compliance, and linkage angle.
 
-**Design status:** proposed instructional design; pilot validation is required. **Intended boundary:** water, needleless syringes, and lightweight objects only.
+**Design status:** exact-catalog redesign drafted; a water/leak, range-of-motion, and claw-linkage first article is required before classroom release. **Boundary:** water and lightweight dry objects only; no needles, loads, or pressurization beyond hand force.
 
 ## Engineering model
 
-For an ideal hydraulic pair, the output force and displacement are related to input force and displacement by
-
-\[
-F_\mathrm{out}/F_\mathrm{in} \approx A_\mathrm{out}/A_\mathrm{in}, \qquad
-x_\mathrm{out}/x_\mathrm{in} \approx A_\mathrm{in}/A_\mathrm{out}.
-\]
-
-The relationships neglect leakage, trapped air, syringe friction, tubing compliance, and linkage geometry. Have teams observe these losses rather than claim ideal performance. For a link carrying a payload, discuss the moment about a pivot: \(M = F r_\perp\).
+For a matched ideal hydraulic pair, \(F_\mathrm{out}/F_\mathrm{in}\approx A_\mathrm{out}/A_\mathrm{in}\) and \(x_\mathrm{out}/x_\mathrm{in}\approx A_\mathrm{in}/A_\mathrm{out}\). These relations neglect leakage, trapped air, syringe friction, tubing compliance, and the changing perpendicular moment arm of the linkage. The pivot moment is \(M=F r_\perp\). Students should measure departure from the ideal model rather than treat it as an expected performance guarantee.
 
 ## Bill of materials — one arm
 
-| Item | Specification and role | Qty. | Purchase link |
+The VEX kit's factory hole pattern, #8-32 screws/nuts/washers, 1x25 bars, steel plates, bearings, collars, and 2/3/12 in square shafts are the structural interface. No part is cut, drilled, milled, or 3D printed. The shared tool kit is listed in the consolidated purchase list.
+
+| Item | Exact purchased configuration and use | Qty. used / purchased | Purchase link |
 | --- | --- | ---: | --- |
-| Syringes | Needleless 20–30 mL Luer-slip or Luer-lock syringes; one matched master/slave pair for each of shoulder, elbow, and gripper | 6 | [Amazon: needleless syringe assortment](https://www.amazon.com/s?k=needleless+luer+lock+syringe+20ml) |
-| Tubing | Clear flexible tubing compatible with the selected syringe tip; 0.6 m per circuit plus spare | 2.2 m | [Amazon: silicone tubing](https://www.amazon.com/s?k=clear+silicone+tubing+luer+lock+adapter) / [McMaster: tubing](https://www.mcmaster.com/products/tubing/) |
-| Luer adapters | Barbed Luer-to-tubing adapters if the tubing does not seal directly on the syringe | 6 | [Amazon: Luer barbed adapters](https://www.amazon.com/s?k=luer+lock+barbed+tubing+adapter) |
-| Arm members | Craft sticks, 1/8 in plywood strips, or laser-cut stock; two parallel pieces per main link | 12–16 | [Amazon: craft sticks](https://www.amazon.com/s?k=jumbo+craft+sticks) |
-| Base | 20 cm × 20 cm foam board or plywood | 1 | [Amazon: foam board](https://www.amazon.com/s?k=foam+board+sheet) |
-| Pivot hardware | #6-32 × 1 in screws, washers, and locknuts; substitute a consistent M3/M4 family | 12 sets | [McMaster: machine screws](https://www.mcmaster.com/products/screws/) |
-| Return element | Rubber bands for gripper return and cable ties for strain relief | 4–8 | [Amazon: rubber bands](https://www.amazon.com/s?k=rubber+band+assortment) |
-| Payload | Foam cubes, folded paper cups, or empty plastic capsules | 3 | locally available |
+| Structural kit | VEX Robotics **276-2161 Metal & Hardware Kit**; use the two 5x15 plates, two 1x25 base rails, two 1x25 arm links, supplied #8-32 hardware, bearings, collars, and short shafts | 1 / 1 kit | [VEX 276-2161](https://www.vexrobotics.com/276-2161.html) |
+| End effector | VEX Robotics **276-6010 Claw Kit v2**; use its assembled claw, supplied #64 rubber bands, 12T gear, and 4x-pitch shaft as provided | 1 / 1 kit | [VEX 276-6010](https://www.vexrobotics.com/276-6010.html) |
+| Syringes | Yalomi **ASIN B0DXMZ7XLW**, 20 mL Luer-lock syringe without needle, 30-pack; select six identical syringes for three matched master/slave pairs | 6 / 30 pack | [Amazon B0DXMZ7XLW](https://www.amazon.com/dp/B0DXMZ7XLW) |
+| Fluid lines | **ASIN B0GSVQK5WJ**, 39 in Luer extension set, 10-pack; use three complete, uncut lines | 3 / 10 pack | [Amazon B0GSVQK5WJ](https://www.amazon.com/dp/B0GSVQK5WJ) |
+| Luer coupling | **ASIN B01KY6X6CS**, polypropylene female-to-female Luer-lock adapter, 10-pack; use three only where required to join a line end to a syringe | up to 3 / 10 pack | [Amazon B01KY6X6CS](https://www.amazon.com/dp/B01KY6X6CS) |
+| Retention and strain relief | VEX Robotics **275-0125**, 11 in zip ties, 100-pack; secure syringe barrels, plunger-link bars, and tube strain relief | up to 18 / 100 pack | [VEX 275-0125](https://www.vexrobotics.com/275-0125.html) |
+| Shared hand tools | VEX Robotics **276-1382 Tool Kit**; use the supplied 5/64 in hex key and wrench with the kit hardware | shared / 1 kit | [VEX 276-1382](https://www.vexrobotics.com/276-1382.html) |
 
-### Facilitator tools
+**Hydraulic interface check before build.** The selected extension set is listed as a Luer extension set with a Luer connector and capped Luer-lock fitting; the selected female-to-female couplers provide the contingency connection. Verify the actual received male/female ends before filling. Do not proceed if a clean, hand-tight Luer-lock circuit cannot be formed without forcing a connector.
 
-Hole punch or predrilled pieces, ruler, screwdriver, marker, tray for water, paper towels, and low-temperature hot glue **used by facilitators only** if reinforcement is needed.
+## Graphical assembly path
 
-## Assembly
+```text
+master syringe ── uncut 39 in Luer line ── slave syringe ── zip-tie linkage ── VEX arm member
+        (one complete, purged circuit for shoulder, elbow, and claw)
 
-1. **Make the base and shoulder.** Mark a centerline on the base. Build two upright, parallel shoulder plates 25–30 mm apart; install a screw-and-washer pivot through the first arm link. The arm should rotate freely without side-to-side rubbing.
-2. **Build the upper and forearm links.** Use paired craft sticks or strips separated by washers. Join them at an elbow pivot. Start with approximately 120 mm upper-arm and 100 mm forearm lengths; record the actual lengths used.
-3. **Add the gripper.** Attach two short sticks as jaws around a pivot. Add a rubber band that tends to open the jaws. A syringe linkage closing the jaws against that return force is easier to diagnose than a fully hydraulic two-jaw design.
-4. **Mount slave syringes.** Pin or zip-tie each slave barrel to the stationary member and connect its plunger to the member it should rotate. For the shoulder, barrel on base and plunger on upper arm; for elbow, barrel on upper arm and plunger on forearm. Keep each plunger force nearly perpendicular to its driven link near mid-stroke.
-5. **Prepare each hydraulic circuit.** Fill one syringe and its tubing completely with water. Connect the matched slave syringe while both are flooded. Cycle slowly with the slave pointed upward until visible air bubbles are minimized; then attach it to the arm. A bubble is a useful lesson in compressibility, but too much air makes control poor.
-6. **Mount master syringes.** Tape or clamp the three master syringes to a control board in the same order as shoulder, elbow, and gripper. Label push/pull directions with arrows.
-7. **Check motion without payload.** Move one circuit at a time. Correct binding before adding the target objects. If a joint does not return, inspect pivot friction, syringe alignment, trapped air, and tube kinks.
-8. **Run the challenge.** Start with three light objects 10–20 cm from the base. Measure placement count, time, or reachable area; change only one variable between trials.
+two 5x15 plates + two 1x25 base rails → shoulder pivot → one 1x25 upper link → elbow pivot
+                                                                       ↓
+                                                            one 1x25 forearm → Claw Kit v2
+```
 
-## Suggested investigation cards
+1. **Build the non-moving base.** Join the two 5x15 plates with two uncut 1x25 bars as base rails and supplied #8-32 hardware so the plates are parallel. Use factory holes only. Tighten nuts against washers; do not overtighten a joint intended to pivot.
+2. **Make the two links.** Use one 1x25 bar for the upper link and one for the forearm. Install a supplied square shaft through aligned factory holes with bearings/collars as pivot retainers. Leave a small running clearance and verify each link swings before adding an actuator.
+3. **Install the claw.** Fasten the unmodified 276-6010 claw to the forearm through its supplied VEX-compatible mounting holes. Its rubber bands supply the claw return force. Do not add a motor; the third syringe is the proposed manual actuator.
+4. **Mount slave syringes.** For shoulder and elbow, zip-tie each *barrel* to the stationary adjacent structure and couple the plunger flange directly to the driven VEX link with a zip-tie loop. For the claw, retain the barrel on the forearm and couple the plunger to the Claw Kit actuator point. Keep the plunger centered through its full stroke; if it side-loads or sticks, stop and revise the attachment holes—do not force it.
+5. **Make three closed fluid circuits.** For each pair, connect one complete 39 in extension set between two 20 mL syringes. Use a B01KY6X6CS coupler only when the received extension end requires it. Fill slowly with water, hold the slave upward, and cycle until visible bubbles are minimized. Keep water away from floors/electronics and dry all leaks before continuing.
+6. **Place master syringes.** Retain masters against one exterior base rail with zip ties; label shoulder, elbow, and claw. Route each uncut line with gentle bends and a zip-tie strain-relief loop—not through a gear mesh or pivot.
+7. **Commission unloaded.** Move one circuit at a time. Confirm no leak, tube kink, joint bind, or syringe-plunger side load. Then use the claw only with a lightweight dry classroom object. Record the relationship between master travel, slave travel, and joint angle.
 
-- What changes when the slave syringe diameter is increased while the master is held fixed?
-- How does moving the shoulder-cylinder attachment closer to its pivot affect required hand force and arm travel?
-- Where does the arm first lose accuracy: the hydraulic circuit, a flexible frame, a loose pivot, or the gripper?
+## First-article acceptance checks
+
+- Every fastener is supplied by 276-2161 and is #8-32; every structural hole used is factory-provided.
+- Each water circuit remains sealed under slow hand operation for five cycles; no connector is forced.
+- A full syringe stroke does not bottom a structural pivot or side-load a plunger.
+- Claw opens/returns without a motor and without a loose part entering a moving linkage.
 
 ## Troubleshooting
 
 | Observation | Likely physical cause | First correction |
 | --- | --- | --- |
-| Spongy motion | Trapped air or flexible tubing | Refill and purge the circuit; shorten tubing |
-| Arm will not lift | Moment demand exceeds actuator/linkage force | Reduce payload, shorten reach, or reposition attachment point |
-| Joint sticks | Pivot overtightened or links rubbing | Add washers; loosen locknut just enough for free rotation |
-| Water leak | Mismatched tubing or incomplete seal | Stop, dry the area, replace/secure adapter, then refill |
+| Spongy motion | Trapped air or line compliance | Refill/purge one circuit and use the complete line without a kink |
+| Arm will not lift | Linkage moment demand exceeds available syringe force | Test unloaded; shorten the effective lever arm using another existing VEX hole |
+| Joint sticks | Pivot hardware clamped too tightly or bars rub | Restore washer/bearing clearance and retighten only fixed members |
+| Water leak | Received Luer ends are incompatible or not hand-tight | Stop, dry, verify connector gender, then add the listed female-to-female coupler if needed |
