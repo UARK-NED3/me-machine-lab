@@ -22,7 +22,7 @@ Each 12T-to-36T stage has \(\omega_\mathrm{out}/\omega_\mathrm{in}=12/36=1/3\). 
 | --- | --- | ---: | --- |
 | Frame, shafts, bearings, collars, and fasteners | VEX Robotics **276-2161 Metal & Hardware Kit**; use two 5x15 plates, 1x25 base/guard bars, three short square shafts, bearings, collars, and supplied #8-32 hardware | 1 / 1 kit | [VEX 276-2161](https://www.vexrobotics.com/276-2161.html) |
 | Gear train | VEX Robotics **276-2169 Gear Kit**; use two 12T and two 36T 24-DP, 20° gears on the VEX 1/8 in square shaft system | 4 / 1 kit | [VEX 276-2169](https://www.vexrobotics.com/gears.html) |
-| Crank | VEX Robotics **276-2045 Advanced Mechanics and Motion Kit**; use one stock hand crank | 1 / 1 kit | [VEX 276-2045](https://www.vexrobotics.com/276-2045.html) |
+| Crank | VEX Robotics **276-2045 Advanced Mechanics and Motion Kit**; use its second stock hand crank. The one consolidated kit is shared with Crank Critter, which uses the other hand crank plus the cams/followers. | 1 / 1 shared kit | [VEX 276-2045](https://www.vexrobotics.com/276-2045.html) |
 | Drum, ratchet, pulleys, and rope | VEX Robotics **276-1546 Winch & Pulley Kit**; use one winch bracket/drum/ratchet/pawl and its factory 4 ft nylon rope, uncut | 1 / 1 kit | [VEX 276-1546](https://www.vexrobotics.com/276-1546.html) |
 | Test load | McMaster-Carr **1914T65** 100 g legal-for-trade hanging test weight with top/bottom hooks | 1 / 1 each | [McMaster 1914T65](https://www.mcmaster.com/1914T65/) |
 | Shared hand tools | VEX Robotics **276-1382 Tool Kit**; use the supplied hex key/wrench with the kit hardware | shared / 1 kit | [VEX 276-1382](https://www.vexrobotics.com/276-1382.html) |

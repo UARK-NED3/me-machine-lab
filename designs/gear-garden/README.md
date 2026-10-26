@@ -27,7 +27,7 @@ Students build a hand-cranked gear train and add non-load-bearing cable-tie “p
 | --- | --- | ---: | ---: | --- |
 | Perforated base and fixed upper finger guard | VEX V5 `276-2311`, 5 x 25 Aluminum Plate | 1 pack | 2 plates | [276-2311](https://www.vexrobotics.com/276-2311.html) |
 | Shafts, flat bearings, shaft collars, standoffs, washers, #8-32 screws and nuts; one factory-hole 1x25 crank bar | VEX V5 `276-2161`, Metal & Hardware Kit | 1 kit | 4 shafts; 8 flat bearings; 8 standoffs; 1 bar; hardware as supplied | [276-2161](https://www.vexrobotics.com/276-2161.html) |
-| Matched 24-DP gears | VEX V5 `276-2169`, Gear Kit | 1 kit | 1 each of 12T, 36T, 60T, and 84T gear | [276-2169](https://www.vexrobotics.com/276-2169.html) |
+| Matched 24-DP gears | VEX V5 `276-2169`, Gear Kit | 1 kit | 1 each of 12T, 36T, 60T, and 84T gear | [276-2169](https://www.vexrobotics.com/gears.html) |
 | Decorations and non-load-bearing labels | VEX V5 `276-1032`, cable ties | 1 pack | 8 ties | [276-1032](https://www.vexrobotics.com/276-1032.html) |
 | Shared assembly tools | VEX V5 `276-1382`, Tool Kit | 1 shared kit | 1 wrench and 2 hex keys | [276-1382](https://www.vexrobotics.com/276-1382.html) |
 

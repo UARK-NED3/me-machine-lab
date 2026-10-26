@@ -21,7 +21,7 @@ For a cam radius \(r(\theta)\), the follower displacement is set by the change i
 | Item | Exact purchased configuration and use | Qty. used / purchased | Purchase link |
 | --- | --- | ---: | --- |
 | Frame and fasteners | VEX Robotics **276-2161 Metal & Hardware Kit**; use two 5x15 plates, four 1x25 bars, supplied #8-32 fasteners, bearings, collars, and short square shafts | 1 / 1 kit | [VEX 276-2161](https://www.vexrobotics.com/276-2161.html) |
-| Crank, cams, and followers | VEX Robotics **276-2045 Advanced Mechanics and Motion Kit**; use one hand crank, two cams, and two cam followers | 1 / 1 kit | [VEX 276-2045](https://www.vexrobotics.com/276-2045.html) |
+| Crank, cams, and followers | VEX Robotics **276-2045 Advanced Mechanics and Motion Kit**; use one hand crank, two cams, and two cam followers. The one consolidated kit supplies this project and its second hand crank is allocated to Rescue Hoist. | 1 / 1 shared kit | [VEX 276-2045](https://www.vexrobotics.com/276-2045.html) |
 | Speed-reduction gears | VEX Robotics **276-2169 Gear Kit**; use one 12T and one 36T 24-DP, 20° gear | 2 / 1 kit | [VEX 276-2169](https://www.vexrobotics.com/gears.html) |
 | Shared hand tools | VEX Robotics **276-1382 Tool Kit**; use the supplied hex key/wrench with the kit hardware | shared / 1 kit | [VEX 276-1382](https://www.vexrobotics.com/276-1382.html) |
 

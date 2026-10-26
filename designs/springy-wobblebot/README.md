@@ -18,7 +18,7 @@ This battery-powered toy demonstrates how an eccentric rotating mass, compliant 
 | --- | --- |
 | Sculpted toy body | McMaster factory-molded impact-resistant polycarbonate enclosure |
 | Internal custom motor mount | An exact low-current 3 V vibration motor with wire leads, retained to the enclosure with full cable ties |
-| Custom spring feet | Four same-size springs selected from a single identified catalog spring kit; 3M self-adhesive polyurethane bumpers as feet |
+| Custom spring feet | Four identical McMaster 1.5-in. compression springs; 3M self-adhesive polyurethane bumpers as feet |
 | Soldered battery wiring | A switched 2xAA holder and two insulated alligator test leads; no stripping, crimping, or soldering |
 
 ## Complete bill of materials — one Wobblebot
@@ -31,8 +31,8 @@ This battery-powered toy demonstrates how an eccentric rotating mass, compliant 
 | Insulated removable connections | Adafruit `4100`, 18 in. alligator-to-alligator test-lead set, six leads | 1 set | 2 leads | [DigiKey 1528-2853-ND](https://www.digikey.com/en/products/detail/adafruit-industries-llc/4100/9919540) |
 | Battery cells | Panasonic eneloop `BK-3MCCA4BA`, AA NiMH rechargeable batteries, 4-pack, 1.2 V/cell | 1 pack | 2 cells | [Amazon ASIN B00JHKSN76](https://www.amazon.com/dp/B00JHKSN76) |
 | Shared charger for repeat sessions | Panasonic eneloop `BQ-CC55SBA`, individual-cell AA/AAA NiMH charger | 1 shared charger | 1 charger | [Amazon ASIN B01G4T230U](https://www.amazon.com/dp/B01G4T230U) |
-| Four compliant legs | McMaster-Carr `9618K14`, 126-piece compression-spring assortment | 1 kit | 4 matching 1–1.75-in. compression springs from one compartment | [9618K14](https://www.mcmaster.com/9618K14/) |
-| Four non-skid feet and motor cushioning | 3M `SJ5012BL`, Bumpon self-adhesive bumper mini-pack | 1 mini-pack | 4 feet + 2 motor cushions | [SJ5012BL](https://www.3m.com/3M/en_US/p/d/v000057350/) |
+| Four compliant legs | McMaster-Carr `9657K107`, zinc-plated spring-tempered-steel compression spring, 1.50 in. long, 0.312 in. OD, 1.1 lbf/in rate, 12-pack | 1 pack | 4 identical springs | [9657K107](https://www.mcmaster.com/9657K107/) |
+| Four non-skid feet and motor cushioning | 3M `SJ5012BL` (Mouser `517-SJ-5012BK`), black polyurethane Bumpon pad, 12.7 mm diameter × 3.5 mm high, 56-pad minimum | 1 pad | 4 feet + 2 motor cushions | [Mouser 517-SJ-5012BK](https://www.mouser.com/en/ProductDetail/3M-Electronic-Specialty/SJ-5012-BLACK) |
 | Motor, legs, battery holder, and decoration retention | VEX V5 `275-0125`, 11-in. zip ties (100-pack) | 1 pack | 12 full ties | [275-0125](https://www.vexrobotics.com/275-0125.html) |
 
 The motor and supply are now an electrically compatible, directly orderable set: two eneloop cells provide 2.4 V nominal, within the manufacturer-stated 2.2–3.6 V operating range of the selected motor series. Use one red/black pair from the `4100` lead set to clamp the holder’s factory-tinned leads to the motor’s wire leads. This is a first-article connection, not a claim that clip retention has been validated during vibration.
@@ -40,7 +40,7 @@ The motor and supply are now an electrically compatible, directly orderable set:
 ## Item-specific assembly sequence
 
 1. Keep the `2490SW` switch **off**. Install two charged `BK-3MCCA4BA` cells in the holder, but do not connect the test leads yet. The two-cell nominal supply is 2.4 V and must be recharged only with the shared `BQ-CC55SBA` NiMH charger.
-2. Select four springs of the same size from one `9618K14` compartment. Use paired `275-0125` cable ties around the enclosure body and the top coil of each spring to retain four legs. Leave each tie full length; do not trim it.
+2. Use four identical `9657K107` springs from the 12-pack. Use paired `275-0125` cable ties around the enclosure body and the top coil of each spring to retain four legs. Leave each tie full length; do not trim it.
 3. Press one `SJ5012BL` bumper onto the lower end of each spring. Allow the adhesive to set according to the bumper supplier’s handling guidance before a motion test.
 4. Place two `SJ5012BL` bumpers on the enclosure top as cushions. Lay `VZ4TL2B0370055L` across them and use two full `275-0125` cable ties around the enclosure to prevent motor rotation or translation. Ensure its eccentric mass can rotate without touching any tie, wall, or hand.
 5. Retain the battery holder against one enclosure side with two additional full cable ties. Use one red/black pair from `4100`: clamp the red lead between the positive holder lead and one motor wire, and the black lead between the negative holder lead and the other motor wire. The exposed clips must not touch each other or any conductive part.
