@@ -35,7 +35,7 @@ This is a compact, hand-powered pinball game. Students vary bumper locations, fl
 | Manual launcher | McMaster-Carr `8478A1`, nonlocking plate-mount retractable spring plunger | 1 | 1 | [8478A1](https://www.mcmaster.com/8478A1/) |
 | Two finger flipper pivots | McMaster-Carr `15205A115`, zinc-plated spring hinge, 1-3/4-in. leaves | 2 | 2 | [15205A115](https://www.mcmaster.com/15205A115/) |
 | Straight flipper paddles and plunger adapter plates | McMaster-Carr `1555A2`, zinc-plated steel flat bracket, 3 in. long, five #8 holes | 4 | 4 (2 paddles, 2 launcher adapters) | [1555A2](https://www.mcmaster.com/1555A2/) |
-| Low-profile target/cushion pads | 3M `SJ5012BL`, Bumpon self-adhesive bumper mini-pack | 1 mini-pack | 8 pads | [SJ5012BL](https://www.3m.com/3M/en_US/p/d/v100720225/) |
+| Low-profile target/cushion pads | 3M `SJ5012BL`, Bumpon self-adhesive bumper mini-pack | 1 mini-pack | 8 pads | [SJ5012BL](https://www.3m.com/3M/en_US/p/d/v000057350/) |
 | Shared assembly tools | VEX V5 `276-1382`, Tool Kit | 1 shared kit | 1 wrench and 2 hex keys | [276-1382](https://www.vexrobotics.com/276-1382.html) |
 
 No additional fasteners, raw stock, cut panel, or adhesive other than the supplied bumper adhesive is required by this BOM.
