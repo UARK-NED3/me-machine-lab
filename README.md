@@ -17,6 +17,10 @@ Open, hands-on mechanical-engineering outreach projects for students who learn b
 | [Springy Wobblebot](designs/springy-wobblebot/README.md) | Battery-powered vibrating creature on spring legs | Grades 5–10 | 30–60 min | Unbalance, vibration, and friction |
 | [Build-a-Monocular Lab](designs/monocular-lab/README.md) | Threaded 3× Galilean monocular for terrestrial viewing | Grades 8–12 | 45–60 min | Focal length, angular magnification, and focus |
 
+## Detailed assembly manuals
+
+The combined [step-by-step illustrated assembly manual (PDF)](output/pdf/ME_Hands_On_Project_Detailed_Assembly_Manuals.pdf) includes the exact-item pull list, safety boundary, setup, assembly sequence, first-article checks, troubleshooting, and activity prompt for every design. These remain rendered concepts until their respective physical first-article checks are completed.
+
 ## Design philosophy
 
 Every project follows the same cycle: **make a mechanism → measure a result → change one variable → explain the physical reason.** A build is not presented as a validated scientific result; it is a controlled, safe demonstration and design challenge.
