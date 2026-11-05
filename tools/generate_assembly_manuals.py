@@ -27,7 +27,7 @@ from reportlab.platypus import (
     Table,
     TableStyle,
 )
-from reportlab.graphics.shapes import Circle, Drawing, String
+from reportlab.graphics.shapes import Circle, Drawing, Line, Rect, String
 from reportlab.pdfgen import canvas
 from reportlab.platypus import SimpleDocTemplate
 
@@ -50,6 +50,12 @@ PROJECTS = [
             "Separate the guide rope from the drive rope before building. Do not cut, melt, splice, or substitute rope.",
             "Confirm that each pulley, shaft collar, and tower fastener is present before raising either tower.",
         ],
+        "words": [
+            ("Pulley", "A grooved wheel that lets rope change direction."),
+            ("Guide rope", "The fixed rope that the gondola rolls along."),
+            ("Counterweight", "The hanging mass that helps move the gondola."),
+        ],
+        "adult_help": "Check that both towers stand firmly and that the counterweight stays inside the marked landing area.",
     },
     {
         "slug": "crank-critter",
@@ -63,6 +69,12 @@ PROJECTS = [
             "Use the VEX 24-DP gear pair only; do not combine gears from different pitch systems.",
             "Keep the frame on a flat table. The base must sit without rocking before a crank is installed.",
         ],
+        "words": [
+            ("Cam", "An off-center wheel that makes a part move up and down."),
+            ("Follower", "The part that touches the cam and copies its motion."),
+            ("Gear mesh", "Where the teeth of two gears touch and roll together."),
+        ],
+        "adult_help": "Check the base does not rock and keep fingers away while the crank is being turned.",
     },
     {
         "slug": "gear-garden",
@@ -76,6 +88,12 @@ PROJECTS = [
             "Lay out the 12T, 36T, 60T, and 84T gears. Confirm each has the VEX square-shaft interface before assembly.",
             "Keep cable ties outside the plate sandwich and untrimmed. They are visual indicators only, never load-bearing members.",
         ],
+        "words": [
+            ("Standoff", "A spacer that keeps the two plates the same distance apart."),
+            ("Gear mesh", "Where the teeth of two gears touch and roll together."),
+            ("Guard", "The upper plate that keeps fingers away from moving gears."),
+        ],
+        "adult_help": "Confirm the upper plate blocks finger access to every gear mesh before anyone turns the crank.",
     },
     {
         "slug": "hydrograb",
@@ -89,6 +107,12 @@ PROJECTS = [
             "Inspect the Luer ends on each received extension set. Do not force a connection; use the listed female-to-female adapter only when its connector gender is required.",
             "Arrange a tray, towels, and a dry landing area before filling any circuit.",
         ],
+        "words": [
+            ("Syringe barrel", "The clear tube that holds water."),
+            ("Plunger", "The sliding rod that pushes water through the tube."),
+            ("Luer connection", "The twist-together fitting at the end of a syringe or tube."),
+        ],
+        "adult_help": "Check every tube connection before filling, and immediately manage water spills away from electrical equipment.",
     },
     {
         "slug": "monocular-lab",
@@ -102,6 +126,12 @@ PROJECTS = [
             "Verify the objective is mounted and the negative eyepiece is free of chips, cracks, fingerprints, and damaged coatings before threading parts together.",
             "Identify the rotating focus section and its locking ring before installing the eyepiece. Do not use pliers, tape, adhesive, or a cut spacer.",
         ],
+        "words": [
+            ("Objective", "The front lens that points toward the distant object."),
+            ("Eyepiece", "The lens closest to your eye."),
+            ("Focus ring", "The part you turn slowly to make the view sharp."),
+        ],
+        "adult_help": "Inspect the optics for damage and enforce the no-Sun, no-laser viewing rule before any student looks through it.",
     },
     {
         "slug": "pinball-lab",
@@ -115,6 +145,12 @@ PROJECTS = [
             "Select four straight, undamaged VEX shafts and eight rubber collars for the post bumpers.",
             "Keep the plunger uncompressed until the launcher adapter is fully bolted and its travel is enclosed by the perimeter rails.",
         ],
+        "words": [
+            ("Plunger", "The sliding launcher that gives the ball its first push."),
+            ("Flipper", "A moving paddle that redirects the ball."),
+            ("Perimeter rail", "The outside wall that keeps the ball on the board."),
+        ],
+        "adult_help": "Confirm the launcher travel is enclosed and keep fingers clear while another person releases the ball.",
     },
     {
         "slug": "rescue-hoist",
@@ -128,6 +164,12 @@ PROJECTS = [
             "Set aside two 12T and two 36T gears from the same VEX kit. Do not substitute a 4:1 stage; the intended train is 3:1 times 3:1.",
             "Inspect the stock rope, drum, pawl, and ratchet. Stop if the rope is frayed or the pawl does not move freely.",
         ],
+        "words": [
+            ("Drum", "The cylinder that winds up the rope."),
+            ("Ratchet", "The toothed wheel that allows turning in one direction."),
+            ("Pawl", "The small catch that locks into the ratchet teeth."),
+        ],
+        "adult_help": "Control the 100 g test weight and verify that the ratchet holds before hands enter the no-hand zone.",
     },
     {
         "slug": "springy-wobblebot",
@@ -141,6 +183,12 @@ PROJECTS = [
             "Choose four identical springs and inspect them for sharp ends, permanent bends, or damage.",
             "Prepare a clear floor tray for motion tests. Keep hands, hair, clothing, and loose objects outside the eccentric-mass sweep.",
         ],
+        "words": [
+            ("Eccentric mass", "A weight mounted off-center on the motor shaft."),
+            ("Clip lead", "A wire with a spring clip at each end."),
+            ("Sweep", "The circular space the spinning weight moves through."),
+        ],
+        "adult_help": "Control power switching and keep hands, hair, and loose objects outside the spinning-weight sweep.",
     },
 ]
 
@@ -202,7 +250,7 @@ def sentence_groups(step: str) -> list[str]:
     current: list[str] = []
     for part in parts:
         current.append(part)
-        if len(" ".join(current)) > 175 or len(current) == 2:
+        if len(" ".join(current)) > 125 or len(current) == 1:
             groups.append(" ".join(current))
             current = []
     if current:
@@ -266,19 +314,18 @@ def bullets(lines: list[str]) -> list[str]:
 def make_styles():
     styles = getSampleStyleSheet()
     return {
-        "title": ParagraphStyle("ManualTitle", parent=styles["Title"], fontName="Helvetica-Bold", fontSize=22, leading=26, textColor=colors.HexColor("#123B5D"), alignment=TA_CENTER, spaceAfter=10),
-        "subtitle": ParagraphStyle("ManualSubtitle", parent=styles["BodyText"], fontName="Helvetica", fontSize=10, leading=14, textColor=colors.HexColor("#455A64"), alignment=TA_CENTER, spaceAfter=12),
-        "h1": ParagraphStyle("ManualH1", parent=styles["Heading1"], fontName="Helvetica-Bold", fontSize=15, leading=18, textColor=colors.HexColor("#123B5D"), spaceBefore=12, spaceAfter=6),
-        "h2": ParagraphStyle("ManualH2", parent=styles["Heading2"], fontName="Helvetica-Bold", fontSize=11.5, leading=14, textColor=colors.HexColor("#1E5A88"), spaceBefore=10, spaceAfter=4),
-        "body": ParagraphStyle("ManualBody", parent=styles["BodyText"], fontName="Helvetica", fontSize=9.2, leading=12.4, spaceAfter=5),
-        "small": ParagraphStyle("ManualSmall", parent=styles["BodyText"], fontName="Helvetica", fontSize=7.5, leading=9.2, spaceAfter=2),
-        "step": ParagraphStyle("ManualStep", parent=styles["BodyText"], fontName="Helvetica", fontSize=9.4, leading=13.0, leftIndent=0, spaceAfter=7),
-        "stepdo": ParagraphStyle("ManualStepDo", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=10.2, leading=13.4, textColor=colors.HexColor("#123B5D"), spaceAfter=4),
-        "stepcheck": ParagraphStyle("ManualStepCheck", parent=styles["BodyText"], fontName="Helvetica", fontSize=8.5, leading=10.4, textColor=colors.HexColor("#36515E"), spaceAfter=2),
-        "stepstop": ParagraphStyle("ManualStepStop", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=8.5, leading=10.4, textColor=colors.HexColor("#9A3C12"), spaceAfter=2),
-        "callout": ParagraphStyle("ManualCallout", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=9.2, leading=12.2, textColor=colors.HexColor("#7A2E0E"), spaceAfter=5),
-        "table": ParagraphStyle("ManualTable", parent=styles["BodyText"], fontName="Helvetica", fontSize=6.5, leading=7.8),
-        "tablehead": ParagraphStyle("ManualTableHead", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=6.5, leading=7.8, textColor=colors.white),
+        "title": ParagraphStyle("ManualTitle", parent=styles["Title"], fontName="Helvetica-Bold", fontSize=24, leading=28, textColor=colors.HexColor("#123B5D"), alignment=TA_CENTER, spaceAfter=10),
+        "subtitle": ParagraphStyle("ManualSubtitle", parent=styles["BodyText"], fontName="Helvetica", fontSize=11, leading=15, textColor=colors.HexColor("#37474F"), alignment=TA_CENTER, spaceAfter=12),
+        "h1": ParagraphStyle("ManualH1", parent=styles["Heading1"], fontName="Helvetica-Bold", fontSize=16.5, leading=20, textColor=colors.HexColor("#123B5D"), spaceBefore=13, spaceAfter=7),
+        "h2": ParagraphStyle("ManualH2", parent=styles["Heading2"], fontName="Helvetica-Bold", fontSize=12.5, leading=15.5, textColor=colors.HexColor("#1E5A88"), spaceBefore=10, spaceAfter=5),
+        "body": ParagraphStyle("ManualBody", parent=styles["BodyText"], fontName="Helvetica", fontSize=10.2, leading=13.8, spaceAfter=6),
+        "small": ParagraphStyle("ManualSmall", parent=styles["BodyText"], fontName="Helvetica", fontSize=8.4, leading=10.8, textColor=colors.HexColor("#37474F"), spaceAfter=3),
+        "stepdo": ParagraphStyle("ManualStepDo", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=11.2, leading=14.8, textColor=colors.HexColor("#123B5D"), spaceAfter=5),
+        "stepcheck": ParagraphStyle("ManualStepCheck", parent=styles["BodyText"], fontName="Helvetica", fontSize=9.3, leading=11.8, textColor=colors.HexColor("#264653"), spaceAfter=3),
+        "stepstop": ParagraphStyle("ManualStepStop", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=9.3, leading=11.8, textColor=colors.HexColor("#8B2E08"), spaceAfter=2),
+        "callout": ParagraphStyle("ManualCallout", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=10.2, leading=13.6, textColor=colors.HexColor("#7A2E0E"), spaceAfter=6),
+        "table": ParagraphStyle("ManualTable", parent=styles["BodyText"], fontName="Helvetica", fontSize=7.7, leading=9.5),
+        "tablehead": ParagraphStyle("ManualTableHead", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=7.7, leading=9.5, textColor=colors.white),
     }
 
 
@@ -309,12 +356,87 @@ def number_badge(number: str) -> Drawing:
     return drawing
 
 
+def build_route() -> Drawing:
+    """Show the repeated card routine with color and words, not color alone."""
+    drawing = Drawing(7.15 * inch, 0.58 * inch)
+    stages = [
+        ("1. FIND", "Match the parts", "#1E5A88"),
+        ("2. DO", "Make the change", "#177E5C"),
+        ("3. LOOK", "Check gentle motion", "#496A78"),
+        ("4. ASK", "Stop if it fights", "#B4500E"),
+    ]
+    width = 1.7 * inch
+    for index, (label, note, color) in enumerate(stages):
+        x = index * 1.8 * inch
+        drawing.add(Rect(x, 0.04 * inch, width, 0.48 * inch, fillColor=colors.HexColor(color), strokeColor=None, rx=4, ry=4))
+        drawing.add(String(x + width / 2, 0.32 * inch, label, fontName="Helvetica-Bold", fontSize=8.5, fillColor=colors.white, textAnchor="middle"))
+        drawing.add(String(x + width / 2, 0.15 * inch, note, fontName="Helvetica", fontSize=6.9, fillColor=colors.white, textAnchor="middle"))
+        if index < len(stages) - 1:
+            drawing.add(Line(x + width + 0.02 * inch, 0.28 * inch, x + 1.78 * inch, 0.28 * inch, strokeColor=colors.HexColor("#90A4AE"), strokeWidth=1.2))
+    return drawing
+
+
+def vocabulary_table(words: list[tuple[str, str]], styles: dict) -> Table:
+    """Give a young reader plain-language names before the technical steps."""
+    data = [[Paragraph("WORD", styles["tablehead"]), Paragraph("WHAT IT MEANS", styles["tablehead"])]]
+    data += [[Paragraph(word, styles["table"]), Paragraph(meaning, styles["table"])] for word, meaning in words]
+    table = Table(data, colWidths=[1.45 * inch, 5.8 * inch], hAlign="LEFT")
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1E5A88")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("GRID", (0, 0), (-1, -1), 0.3, colors.HexColor("#C8D6DF")),
+        ("BACKGROUND", (0, 1), (-1, -1), colors.HexColor("#F7FAFC")),
+        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+        ("TOPPADDING", (0, 0), (-1, -1), 4),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+    ]))
+    return table
+
+
+def project_index(projects: list[dict], styles: dict) -> Table:
+    """Keep the cover index complete without creating a mostly blank overflow page."""
+    cells = [Paragraph(f"<b>{index + 1}. {project['name']}</b><br/>{project['audience']}", styles["small"]) for index, project in enumerate(projects)]
+    data = [cells[index:index + 2] for index in range(0, len(cells), 2)]
+    table = Table(data, colWidths=[3.6 * inch, 3.6 * inch], hAlign="LEFT")
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#F3F8FB")),
+        ("BOX", (0, 0), (-1, -1), 0.5, colors.HexColor("#B7D0DE")),
+        ("INNERGRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#D7E4EB")),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (-1, -1), 7),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+        ("TOPPADDING", (0, 0), (-1, -1), 5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+    ]))
+    return table
+
+
+def step_check(instruction: str) -> str:
+    """Turn a generic inspection into the likely observable for this action."""
+    text = instruction.lower()
+    if any(word in text for word in ("rope", "pulley", "drum")):
+        return "Pull the rope slowly by hand. It should stay in the pulley groove or on the drum, without rubbing an edge."
+    if any(word in text for word in ("tube", "syringe", "luer", "water")):
+        return "Move the plunger slowly. The tube should not kink, pop off, or leak."
+    if any(word in text for word in ("gear", "crank", "cam")):
+        return "Turn one part slowly by hand. The teeth should roll together without jumping or pinching."
+    if any(word in text for word in ("wire", "battery", "motor", "clip")):
+        return "Before power is on, check that clips touch only their intended terminals and no wire can touch the spinning part."
+    if any(word in text for word in ("lens", "optic", "eyepiece", "focus")):
+        return "Turn the threaded part with fingertips only. It should start straight and turn smoothly; do not touch the lens surface."
+    if any(word in text for word in ("spring", "hinge", "plunger", "flipper")):
+        return "Move the part slowly with your hand. It should travel freely and return without scraping nearby hardware."
+    return "Gently move the part by hand. It should use an existing hole or thread and should not need force."
+
+
 def step_card(number: str, instruction: str, styles: dict) -> Table:
     """Create a visual Do-Check-Stop card suitable for a young builder with an adult."""
     content = [
         Paragraph(f"<b>DO:</b> {instruction}", styles["stepdo"]),
-        Paragraph("<b>CHECK:</b> Gently move the part by hand. It should fit through an existing hole or thread and should not need force.", styles["stepcheck"]),
-        Paragraph("<b>STOP AND ASK AN ADULT:</b> if a part binds, a fastener will not start, a rope/tube/wire rubs, or you think a part needs cutting or drilling.", styles["stepstop"]),
+        Paragraph(f"<b>LOOK:</b> {step_check(instruction)}", styles["stepcheck"]),
+        Paragraph("<b>ASK AN ADULT NOW:</b> if a part binds, a fastener will not start, a rope, tube, or wire rubs, or you think a part needs cutting or drilling.", styles["stepstop"]),
     ]
     table = Table([[number_badge(number), content]], colWidths=[0.78 * inch, 6.35 * inch], hAlign="LEFT")
     table.setStyle(TableStyle([
@@ -362,7 +484,7 @@ def project_flow(project: dict, styles: dict) -> list:
     source = ROOT / "designs" / project["slug"] / "README.md"
     lines = source.read_text(encoding="utf-8").splitlines()
     title = clean_markdown(next(line[2:] for line in lines if line.startswith("# ")))
-    purpose = first_paragraph(lines, "purpose")
+    purpose = first_paragraph(lines, "purpose") or project["goal"]
     bom = parse_table(section(lines, "bill of materials"))
     assembly = numbered_steps(section(lines, "assembly sequence"))
     checks = bullets(section(lines, "first-article"))
@@ -407,12 +529,21 @@ def project_flow(project: dict, styles: dict) -> list:
     flow += [Paragraph("3. Before building: inventory and set up", styles["h1"])]
     flow += bullet_list(project["preflight"], styles)
     flow += [
+        Paragraph("Words to know", styles["h2"]),
+        Paragraph("If a word on a build card feels unfamiliar, pause and use this mini-dictionary. Point to the labeled drawing above as you read it.", styles["small"]),
+        vocabulary_table(project["words"], styles),
+        Spacer(1, 6),
+        Paragraph("Adult helper check", styles["h2"]),
+        Paragraph(project["adult_help"], styles["callout"]),
         Paragraph("Pull-list bill of materials", styles["h2"]),
-        Paragraph("Use the exact vendor item or ASIN shown below. The canonical README in the matching design folder retains the direct procurement hyperlinks and package-yield notes.", styles["small"]),
+        Paragraph("This is an adult pull-list. Use the exact vendor item or ASIN shown below. The canonical README in the matching design folder retains the direct procurement hyperlinks and package-yield notes.", styles["small"]),
         bom_table(bom, styles),
         Spacer(1, 8),
         Paragraph("4. Step-by-step assembly", styles["h1"]),
-        Paragraph("Complete the cards from top to bottom. The large blue circle tells you the next action. A child can read the card and do the action with an adult nearby; the orange STOP line tells everyone when to pause and ask for help.", styles["body"]),
+        Paragraph("Complete the cards from top to bottom. Find the parts named in the card, do only that one action, then use LOOK before starting the next card. A child can read and perform each action with an adult nearby. Never force a part to fit.", styles["body"]),
+        Paragraph("When a card names a number such as 276-2288, match that exact number to the adult pull-list above before you begin. Count the parts first; do not guess or swap in a part that only looks similar.", styles["small"]),
+        build_route(),
+        Spacer(1, 6),
     ]
     card_number = 1
     for step in assembly:
@@ -461,10 +592,17 @@ def main() -> None:
         Paragraph("Students and facilitators may select, position, thread, fasten, tie, route, and adjust catalog parts through their existing features. They may not alter a purchased part. Cutting, drilling, machining, sanding, bending, heat-forming, welding, soldering, or 3D-printing a build component is outside this manual.", styles["body"]),
         Paragraph("How to use this manual", styles["h1"]),
         Paragraph("Read the project safety boundary first, inventory exact catalog parts, assemble in sequence, verify each step by hand, then complete the first-article release checks. The detailed product links and price information are maintained in the design README files and consolidated purchase list because vendor availability changes.", styles["body"]),
+        build_route(),
+        Spacer(1, 6),
+        Paragraph("Each build card uses this same routine. DO means make only the action shown. LOOK means check the motion or connection gently. ASK means pause instead of forcing a part. An adult stays nearby for every build.", styles["small"]),
         Paragraph("Included projects", styles["h1"]),
     ]
-    flow += bullet_list([f"{project['name']}: {project['goal']}" for project in PROJECTS], styles)
-    flow += [Spacer(1, 12), Paragraph(f"Generated from repository design READMEs on {date(2026, 11, 4).isoformat()}.", styles["small"]), PageBreak()]
+    flow += [
+        project_index(PROJECTS, styles),
+        Spacer(1, 8),
+        Paragraph(f"Generated from repository design READMEs on {date.today().isoformat()}.", styles["small"]),
+        PageBreak(),
+    ]
     for project in PROJECTS:
         flow += project_flow(project, styles)
     try:
