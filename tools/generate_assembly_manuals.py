@@ -7,6 +7,8 @@ these are detailed first-article build procedures, not classroom-release evidenc
 from __future__ import annotations
 
 import re
+import shutil
+import subprocess
 from datetime import date
 from pathlib import Path
 
@@ -17,18 +19,23 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import (
     Image,
+    KeepTogether,
     LongTable,
     PageBreak,
     Paragraph,
     Spacer,
+    Table,
     TableStyle,
 )
+from reportlab.graphics.shapes import Circle, Drawing, String
 from reportlab.pdfgen import canvas
 from reportlab.platypus import SimpleDocTemplate
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf" / "ME_Hands_On_Project_Detailed_Assembly_Manuals.pdf"
+TEMP_DIAGRAM_DIR = ROOT / "tmp" / "pdfs"
+INKSCAPE = Path("C:/Program Files/Inkscape/bin/inkscape.exe")
 
 PROJECTS = [
     {
@@ -164,6 +171,45 @@ def clean_markdown(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def diagram_file(project: dict) -> Path | None:
+    """Rasterize the repository's own SVG diagram for reliable PDF embedding.
+
+    The diagrams are existing project assets rather than generated artwork, so the
+    visible mechanism labels remain traceable to the design documentation.
+    """
+    source = ROOT / "assets" / f"{project['slug']}.svg"
+    if project["slug"] == "monocular-lab":
+        source = ROOT / "assets" / "manuals" / "monocular-lab-assembly.svg"
+    if not source.exists() or not INKSCAPE.exists():
+        return None
+    TEMP_DIAGRAM_DIR.mkdir(parents=True, exist_ok=True)
+    target = TEMP_DIAGRAM_DIR / f"{project['slug']}-diagram.png"
+    subprocess.run(
+        [str(INKSCAPE), str(source), "--export-type=png", f"--export-filename={target}", "--export-width=1500"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return target if target.exists() else None
+
+
+def sentence_groups(step: str) -> list[str]:
+    """Keep each student-facing action card short enough to scan while building."""
+    parts = [part.strip() for part in re.split(r"(?<=[.!?])\s+|;\s+", step) if part.strip()]
+    if not parts:
+        return [step]
+    groups: list[str] = []
+    current: list[str] = []
+    for part in parts:
+        current.append(part)
+        if len(" ".join(current)) > 175 or len(current) == 2:
+            groups.append(" ".join(current))
+            current = []
+    if current:
+        groups.append(" ".join(current))
+    return groups
+
+
 def section(lines: list[str], heading_match: str) -> list[str]:
     start = next((i for i, line in enumerate(lines) if line.lower().startswith("##") and heading_match in line.lower()), None)
     if start is None:
@@ -227,6 +273,9 @@ def make_styles():
         "body": ParagraphStyle("ManualBody", parent=styles["BodyText"], fontName="Helvetica", fontSize=9.2, leading=12.4, spaceAfter=5),
         "small": ParagraphStyle("ManualSmall", parent=styles["BodyText"], fontName="Helvetica", fontSize=7.5, leading=9.2, spaceAfter=2),
         "step": ParagraphStyle("ManualStep", parent=styles["BodyText"], fontName="Helvetica", fontSize=9.4, leading=13.0, leftIndent=0, spaceAfter=7),
+        "stepdo": ParagraphStyle("ManualStepDo", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=10.2, leading=13.4, textColor=colors.HexColor("#123B5D"), spaceAfter=4),
+        "stepcheck": ParagraphStyle("ManualStepCheck", parent=styles["BodyText"], fontName="Helvetica", fontSize=8.5, leading=10.4, textColor=colors.HexColor("#36515E"), spaceAfter=2),
+        "stepstop": ParagraphStyle("ManualStepStop", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=8.5, leading=10.4, textColor=colors.HexColor("#9A3C12"), spaceAfter=2),
         "callout": ParagraphStyle("ManualCallout", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=9.2, leading=12.2, textColor=colors.HexColor("#7A2E0E"), spaceAfter=5),
         "table": ParagraphStyle("ManualTable", parent=styles["BodyText"], fontName="Helvetica", fontSize=6.5, leading=7.8),
         "tablehead": ParagraphStyle("ManualTableHead", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=6.5, leading=7.8, textColor=colors.white),
@@ -250,6 +299,37 @@ def bullet_list(items: list[str], styles: dict) -> list:
     for item in items:
         flow.append(Paragraph(f"• {item}", styles["body"]))
     return flow
+
+
+def number_badge(number: str) -> Drawing:
+    """A large, print-friendly number that makes the next task unambiguous."""
+    drawing = Drawing(0.64 * inch, 0.64 * inch)
+    drawing.add(Circle(0.32 * inch, 0.32 * inch, 0.27 * inch, fillColor=colors.HexColor("#1E5A88"), strokeColor=colors.HexColor("#123B5D")))
+    drawing.add(String(0.32 * inch, 0.245 * inch, number, fontName="Helvetica-Bold", fontSize=13, fillColor=colors.white, textAnchor="middle"))
+    return drawing
+
+
+def step_card(number: str, instruction: str, styles: dict) -> Table:
+    """Create a visual Do-Check-Stop card suitable for a young builder with an adult."""
+    content = [
+        Paragraph(f"<b>DO:</b> {instruction}", styles["stepdo"]),
+        Paragraph("<b>CHECK:</b> Gently move the part by hand. It should fit through an existing hole or thread and should not need force.", styles["stepcheck"]),
+        Paragraph("<b>STOP AND ASK AN ADULT:</b> if a part binds, a fastener will not start, a rope/tube/wire rubs, or you think a part needs cutting or drilling.", styles["stepstop"]),
+    ]
+    table = Table([[number_badge(number), content]], colWidths=[0.78 * inch, 6.35 * inch], hAlign="LEFT")
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#F3F8FB")),
+        ("BOX", (0, 0), (-1, -1), 0.7, colors.HexColor("#B7D0DE")),
+        ("LINEBEFORE", (1, 0), (1, -1), 0.5, colors.HexColor("#D7E4EB")),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LEFTPADDING", (0, 0), (0, -1), 4),
+        ("RIGHTPADDING", (0, 0), (0, -1), 4),
+        ("TOPPADDING", (0, 0), (-1, -1), 7),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+        ("LEFTPADDING", (1, 0), (1, -1), 8),
+        ("RIGHTPADDING", (1, 0), (1, -1), 7),
+    ]))
+    return table
 
 
 def bom_table(rows: list[list[str]], styles: dict) -> LongTable:
@@ -288,6 +368,7 @@ def project_flow(project: dict, styles: dict) -> list:
     checks = bullets(section(lines, "first-article"))
     troubleshooting_rows = parse_table(section(lines, "troubleshooting"))
     physics = first_paragraph(lines, "physics prompt")
+    mechanism_diagram = diagram_file(project)
 
     flow = [
         Paragraph(title, styles["title"]),
@@ -310,8 +391,20 @@ def project_flow(project: dict, styles: dict) -> list:
         Paragraph("2. Safety boundary", styles["h1"]),
         Paragraph(project["boundary"], styles["callout"]),
         Paragraph("Use only factory-provided holes, threads, bores, mounting patterns, and supplied fasteners. Do not cut, drill, punch, mill, saw, bend, heat-form, solder, glue, or 3D-print any component.", styles["body"]),
-        Paragraph("3. Before building: inventory and set up", styles["h1"]),
     ]
+    if mechanism_diagram:
+        diagram = Image(str(mechanism_diagram))
+        max_width, max_height = 6.8 * inch, 3.0 * inch
+        ratio = min(max_width / diagram.imageWidth, max_height / diagram.imageHeight)
+        diagram.drawWidth = diagram.imageWidth * ratio
+        diagram.drawHeight = diagram.imageHeight * ratio
+        flow += [KeepTogether([
+            Paragraph("What you are making", styles["h2"]),
+            Paragraph("Use this labeled picture to match the big parts before you begin. It explains the intended mechanism; it does not replace the numbered build cards below.", styles["small"]),
+            diagram,
+            Spacer(1, 6),
+        ])]
+    flow += [Paragraph("3. Before building: inventory and set up", styles["h1"])]
     flow += bullet_list(project["preflight"], styles)
     flow += [
         Paragraph("Pull-list bill of materials", styles["h2"]),
@@ -319,11 +412,13 @@ def project_flow(project: dict, styles: dict) -> list:
         bom_table(bom, styles),
         Spacer(1, 8),
         Paragraph("4. Step-by-step assembly", styles["h1"]),
-        Paragraph("Complete the numbered steps in order. After each mechanical change, move the mechanism by hand with power off and with no payload unless the step explicitly directs otherwise.", styles["body"]),
+        Paragraph("Complete the cards from top to bottom. The large blue circle tells you the next action. A child can read the card and do the action with an adult nearby; the orange STOP line tells everyone when to pause and ask for help.", styles["body"]),
     ]
-    for idx, step in enumerate(assembly, start=1):
-        flow.append(Paragraph(f"<b>Step {idx}.</b> {step}", styles["step"]))
-        flow.append(Paragraph("Verification: Stop before the next step if a fastener will not seat through an existing feature, a moving part binds, a rope/tube/wire rubs, or a component requires force beyond normal hand assembly.", styles["small"]))
+    card_number = 1
+    for step in assembly:
+        for child_action in sentence_groups(step):
+            flow += [step_card(str(card_number), child_action, styles), Spacer(1, 6)]
+            card_number += 1
     flow += [
         Paragraph("5. First-article release checks", styles["h1"]),
         Paragraph("A build is not ready for student operation until a facilitator completes and records each applicable check below.", styles["body"]),
@@ -372,7 +467,13 @@ def main() -> None:
     flow += [Spacer(1, 12), Paragraph(f"Generated from repository design READMEs on {date(2026, 11, 4).isoformat()}.", styles["small"]), PageBreak()]
     for project in PROJECTS:
         flow += project_flow(project, styles)
-    doc.build(flow, onFirstPage=footer, onLaterPages=footer)
+    try:
+        doc.build(flow, onFirstPage=footer, onLaterPages=footer)
+    finally:
+        if TEMP_DIAGRAM_DIR.exists():
+            shutil.rmtree(TEMP_DIAGRAM_DIR)
+        if TEMP_DIAGRAM_DIR.parent.exists() and not any(TEMP_DIAGRAM_DIR.parent.iterdir()):
+            TEMP_DIAGRAM_DIR.parent.rmdir()
     print(OUTPUT)
 
 
