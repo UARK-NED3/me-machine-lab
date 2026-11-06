@@ -100,7 +100,7 @@ PROJECTS = [
         "name": "HydroGrab",
         "audience": "Grades 6-10 | 75-90 min",
         "goal": "Build a water-actuated arm and compare predicted with observed force and displacement.",
-        "render": "render-bom-constrained-v2.png",
+        "render": "render-shoulder-fork-concept-v3.png",
         "boundary": "Use water, needleless syringes, and lightweight dry objects only. Apply hand force only. Keep all water away from electrical equipment and wipe spills immediately.",
         "preflight": [
             "Count six identical 20 mL needleless syringes. Pair them before filling so each master and slave has the same nominal bore.",

@@ -2,9 +2,11 @@
 
 ![HydroGrab mechanism diagram](../../assets/hydrograb.svg)
 
-![BOM-constrained 3D render of HydroGrab](render-bom-constrained-v2.png)
+![Revised shoulder-fork 3D render of HydroGrab](render-shoulder-fork-concept-v3.png)
 
-*Illustrative, BOM-constrained 3D render. It depicts the factory-perforated VEX structure, uncut Luer extension sets, 20 mL syringe pairs, cable-tie retention, and the VEX Claw Kit called out below. It is not evidence of a physical first article.*
+![Shoulder-fork pivot detail](shoulder-fork-detail-concept-v3.png)
+
+*Illustrative, BOM-constrained concept renders. The revised main view removes the previously ambiguous extra upright. It shows the two 5x15 plates as the stationary shoulder fork and the upper-arm root mounted outboard on the shoulder shaft. The detail view makes the intended bearing, shaft, and collar stack visible. Neither image is evidence of a physical first article.*
 
 ## Purpose and challenge
 
@@ -43,8 +45,12 @@ two 5x15 plates + two 1x25 base rails → shoulder pivot → one 1x25 upper link
                                                             one 1x25 forearm → Claw Kit v2
 ```
 
-1. **Build the non-moving base.** Join the two 5x15 plates with two uncut 1x25 bars as base rails and supplied #8-32 hardware so the plates are parallel. Use factory holes only. Tighten nuts against washers; do not overtighten a joint intended to pivot.
-2. **Make the two links.** Use one 1x25 bar for the upper link and one for the forearm. Install a supplied square shaft through aligned factory holes with bearings/collars as pivot retainers. Leave a small running clearance and verify each link swings before adding an actuator.
+### Shoulder-fork revision (v3 concept)
+
+The prior render contained an unlisted, ambiguously attached narrow upright. It is removed. The stationary shoulder support is now the pair of 5x15 plates. The upper arm is intentionally an **outboard** shaft-mounted member. From the outboard end toward the opposite plate, the planned stack is: outboard shaft collar - upper-link root square hole - bearing flat on the far plate - far plate - plate gap - near plate - bearing flat on the near plate - retaining shaft collar. The square upper-link hole locks the link to the square shaft; the shaft turns in the two bearing flats. This arrangement uses only the listed kit components and factory holes, but the actual stock shaft length, lateral running clearance, and shoulder bending must be checked during the first article.
+
+1. **Build the non-moving base.** Place the two 5x15 plates vertically and parallel. Join their lower factory-hole rows to the two uncut 1x25 base rails with the supplied #8-32 hardware; use two screws, washers, and nuts at each rail-to-plate interface (eight fixed structural fasteners total). The plates and rails must not move relative to one another. Use factory holes only.
+2. **Build the shoulder pivot and two links.** Fasten one supplied bearing flat at the same upper-hole elevation on each 5x15 plate. Pass an uncut stock square shaft through the two bearings. Put the upper-link root on the outboard side of one plate so its first square hole engages the shaft, then retain the root with an outboard collar and retain the opposite shaft end with a collar. Use the remaining 1x25 bar as the forearm and make its elbow pivot using the same shaft-in-bearing principle. Leave a small running clearance and verify each link swings before adding an actuator.
 3. **Install the claw.** Fasten the unmodified 276-6010 claw to the forearm through its supplied VEX-compatible mounting holes. Its rubber bands supply the claw return force. Do not add a motor; the third syringe is the proposed manual actuator.
 4. **Mount slave syringes.** For shoulder and elbow, zip-tie each *barrel* to the stationary adjacent structure and couple the plunger flange directly to the driven VEX link with a zip-tie loop. For the claw, retain the barrel on the forearm and couple the plunger to the Claw Kit actuator point. Keep the plunger centered through its full stroke; if it side-loads or sticks, stop and revise the attachment holes—do not force it.
 5. **Make three closed fluid circuits.** For each pair, connect one complete 39 in extension set between two 20 mL syringes. Use a B01KY6X6CS coupler only when the received extension end requires it. Fill slowly with water, hold the slave upward, and cycle until visible bubbles are minimized. Keep water away from floors/electronics and dry all leaks before continuing.
